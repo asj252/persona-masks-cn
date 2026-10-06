@@ -1,0 +1,4 @@
+interface:
+  display_name: "人格面具 Persona Masks"
+  short_description: "组合 s/a/e/c/d 主角色与类比拆解、逐步指导、写成文件模块，支持循环 asd、项目层记忆与可选习惯包，并记录试用调整与结果"
+  default_prompt: "使用 $persona-masks，a$kis$smd#Demo/Q1: 帮我理解并逐步完成当前任务。"
