@@ -69,4 +69,4 @@
 
 ## 许可证
 
-尚未选定，发布前补上。
+Apache License 2.0，全文见 [LICENSE](LICENSE)。
