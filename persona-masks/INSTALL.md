@@ -1,4 +1,4 @@
-# Persona Masks 0.4.0 · 安装与试用
+# Persona Masks 0.4.1 · 安装与试用
 
 本包为试用中的文件型 skill；只有 Markdown 指令与可选 Codex UI 元数据，没有服务、数据库或后台监听器。
 包分三部分：**系统核心**（SKILL.md、references/、templates/，一定安装）；**习惯包**（habits/，逐包询问是否安装，装了才写进个人 PROFILE）；项目内容不在包内。
@@ -26,12 +26,17 @@ PROFILE.md、LOG.md、smd.md、kis.md 是个人运行数据，不随包分发；
    | `craft` | 验收标准写得出检查脚本；统计推断先定分析单位；预先验算；起草前对照错误形状自查；另有两条（声明范围、替换句字数） | 无 |
 
 2. 问用户是否安装、装哪几个；不装的照包默认。
-3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.4.0`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
+3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.4.1`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
+
+## 从 0.4.0 升级
+1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留。变化：默认入口是 a，不再按目的自动选角色、不自动换面具，a 也能自己提出计划，用户不满意时 a 自动以子 agent 呼叫 s；直接用 `s:`、`d:`、`c:`、`e:` 前缀时照办并标「直接入口，未经 a 判定」；s 不再限定「五个方向」，取消探索模式（删去 `references/explore.md`），s 一律先读 `options.md`、不与已有条目重复，对条件逐项标已满足／未满足／不确定；a 追问每个方向有几种执行可能；a 接手后先弄清现状；每则回复首行标角色与实例；项目没有 `personas/` 时在主会话首次戴面具提示一次；新增 `plan.md`（计划森林）与 `plan_history.md`（完结后迁出），`options.md` 由 a 与 s 都可以写。这些随核心安装，不写进 PROFILE（「已婉拒的项目」只在用户明确要求不再提示时才记）。
+2. 习惯包本版没有新增或改动条目，PROFILE 的来源栏保持不变。
+3. 已有 `personas/` 的项目不自动改；用户同意时再补建 `plan.md`、`plan_history.md`（以及 0.4.0 起的 `seeker/`、`collector/` 与其余文件）。
 
 ## 从 0.3.0 升级
-1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留。核心的变化：删除共用模块 `t`，其内容并入 `smd`（旧 `t:` 视为 smd；资料目录里的 `t.md` 不自动改名，用户同意时可改名为 `smd.md` 并去掉复习格）；删除 `=文体` 前缀；新增主角色 `d`、循环 `asd` 与 s 的探索模式；c 与 d 的派发偏好；项目层新增 `outline.md`、`backlogs.md`、`options.md`、`data_collected.md` 四份核心文件的模板。这些随核心安装，不写进 PROFILE。
+1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留。核心的变化：删除共用模块 `t`，其内容并入 `smd`（旧 `t:` 视为 smd；资料目录里的 `t.md` 不自动改名，用户同意时可改名为 `smd.md` 并去掉复习格）；删除 `=文体` 前缀；新增主角色 `d`、循环 `asd` 与 s 的探索模式（0.4.1 起已取消）；c 与 d 的派发偏好；项目层新增 `outline.md`、`backlogs.md`、`options.md`、`data_collected.md` 四份核心文件的模板。这些随核心安装，不写进 PROFILE。
 2. 已装的习惯包按 [习惯包](habits/README.md) 的「升级」重新比对同键条目：`brief-workflow` 的 `roles.a-e-c-handoff`、`roles.work-cycle`、`roles.report-channel` 与 `craft.precheck` 有改动；内容不同的逐条询问用户，未答复前保留原条目。已装 `craft` 的，新增的 `craft.claim-scope`、`craft.replacement-length` 逐条询问是否加入；都记进本次升级的 LOG 事件。
-3. 已有 `personas/` 的项目不自动改；用户同意时再按新模板补建 `seeker/`、`collector/` 与四份文件。
+3. 已有 `personas/` 的项目不自动改；用户同意时再按新模板补建 `seeker/`、`collector/` 与六份文件。
 
 ## 从 0.2.0 升级
 1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留。新增共用模块 `wid` 随核心安装，不写进 PROFILE。
@@ -47,7 +52,7 @@ PROFILE.md、LOG.md、smd.md、kis.md 是个人运行数据，不随包分发；
 项目层记忆不自动建立。用户要求，或 a 提出、用户同意后，把本包 `templates/` 中用得上的模板复制进项目的 `personas/`（对应关系见 [项目层](references/project-memory.md)），再按项目填写。建立后，戴面具时先读 `personas/<面具>/MEMORY.md`。
 
 ## 网页端
-网页端没有本机文件系统，只能精简使用（保留角色与 asd，取消其余档案）：见 [网页端用法](references/web.md)（只手动维护合成一份的 `persona_brain.md`，格式与项目层四份文件相同，其余档案取消）。安装方式取决于宿主：支持上传 skill 的，把整个 persona-masks 文件夹打成 zip 上传；不支持的，把 `SKILL.md` 与 `references/` 下的各文件内容放进项目说明或项目文件；缺哪个文件，对应规则就不可用。界面与限制以宿主官方说明为准，本包未在网页端实测。
+网页端没有本机文件系统，只能精简使用（保留角色与 asd，取消其余档案）：见 [网页端用法](references/web.md)（只手动维护合成一份的 `persona_brain.md`，格式与项目层六份文件相同，其余档案取消）。安装方式取决于宿主：支持上传 skill 的，把整个 persona-masks 文件夹打成 zip 上传；不支持的，把 `SKILL.md` 与 `references/` 下的各文件内容放进项目说明或项目文件；缺哪个文件，对应规则就不可用。界面与限制以宿主官方说明为准，本包未在网页端实测。
 
 ## 其他支持 Agent Skills 的宿主
 保留 SKILL.md、references、templates、habits 的相对布局，按宿主的 skills 安装位置放置；agents/openai.yaml 只供 Codex 使用。首次明确资料目录。是否支持文件持久化、子 agent 和美元式 skill 调用取决于宿主，不能仅凭文件兼容宣称已测试兼容。
