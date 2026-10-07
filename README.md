@@ -1,6 +1,6 @@
 # 人格面具 persona-masks
 
-让 AI 助手把「想、做、查」分开的一套轻量角色约定，做成文件型 skill。核心只是几份 Markdown 规则；需要更严的流程时，再选装任务书驱动的习惯包。
+让 AI 助手把「想、做、查」分开的一套轻量角色约定，做成文件型 skill。你只和 `a`（建筑师）对话，由它按需呼叫探索、查资料、实施、审查四个面具；核心只是几份 Markdown 规则，需要更严的流程时，再选装任务书驱动的习惯包。
 
 > 状态：试用版（0.4.1）。尚未证明比普通提示更有效，也没有强制路由或后台监听，只是一组放在文件里的文字约定。
 
@@ -17,13 +17,60 @@
 
 | 面具 | 做什么 |
 |---|---|
-| `s` 探索者 | 暂缓可行性筛选，质疑默认前提，提出方向 |
-| `a` 建筑师 | 觉得该怎么做：取舍、规划、判定合格与否 |
+| `s` 探索者 | 暂缓可行性筛选，质疑默认前提，提出方向；先读 `options.md`，不与已有方向重复 |
+| `a` 建筑师 | 对话入口：先弄清现状，提计划、取舍、判定合格与否 |
 | `e` 工程师 | 照约定实现、测量、验证、交付 |
 | `c` 批判者 | 挑毛病：独立审查，指出可能错在哪，没有否决权 |
 | `d` 数据家 | 找资料、核来源；每条资料带链接，无来源的标注 |
 
 另有三个可以叠加的**共用模块**：`kis`（类比拆解）、`smd`（逐步指导，含教学检查点）、`wid`（把问答写成文件）；以及一个**循环 `asd`**：用户或 a 定目标，s 思考并呼叫 d 查资料，a 评判可行性，不通过就继续。
+
+## 它们怎么协作
+
+```mermaid
+flowchart TB
+  U["用户"] -->|"默认入口"| A["a 建筑师<br/>弄清现状 · 提计划 · 取舍 · 判定"]
+  A -->|"用户不满意 / 要更多方向"| S["s 探索者<br/>提方向：先读 options，不重复"]
+  A -->|"需要资料"| D["d 数据家<br/>找资料：每条带链接"]
+  A -->|"交给实施"| E["e 工程师<br/>照约定实现"]
+  A -->|"送审"| C["c 批判者<br/>独立审查：没有否决权"]
+  S -->|"条件逐项标注"| A
+  D -->|"资料与来源"| A
+  E -->|"回报"| A
+  C -->|"阻断 / 建议"| A
+  classDef core fill:#EEE6F3,stroke:#57068C,color:#330662
+  classDef side fill:#FFFFFF,stroke:#B8B8B8,color:#404040
+  class A core
+  class S,D,E,C side
+```
+
+项目里的管理文件由对应的面具维护，没有就不建；首次在项目里戴面具时会提示一次，你同意才建：
+
+```mermaid
+flowchart LR
+  subgraph collector["d 维护"]
+    DC["data_collected.md<br/>资料"]
+  end
+  subgraph seeker["s 与 a 都可写"]
+    OP["options.md<br/>选项"]
+  end
+  subgraph architect["a 维护"]
+    P["plan.md<br/>计划森林"]
+    H["plan_history.md<br/>已完结的计划"]
+    O["outline.md<br/>大纲"]
+    B["backlogs.md<br/>待办"]
+  end
+  DC -->|"支撑"| OP
+  OP -->|"通过的方向"| P
+  P -->|"根完结：成功或失败"| H
+  classDef box fill:#FFFFFF,stroke:#B8B8B8,color:#404040
+  classDef key fill:#EEE6F3,stroke:#57068C,color:#330662
+  class DC,OP,O,B box
+  class P,H key
+  style collector stroke:#B8B8B8,stroke-dasharray:5 5
+  style seeker stroke:#B8B8B8,stroke-dasharray:5 5
+  style architect stroke:#B8B8B8,stroke-dasharray:5 5
+```
 
 ## 一眼看懂的用法
 
