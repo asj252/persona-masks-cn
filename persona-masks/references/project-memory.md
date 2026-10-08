@@ -22,7 +22,7 @@ personas/
   <面具>/MEMORY.md 按实例分节的索引
   <面具>/<条目>.md 条目档，一档一主题
   architect/outline.md         大纲（a 维护）
-  architect/backlogs.md        待办（a 维护）
+  architect/backlogs.md        待办（a 维护，e 也可更新条目与状态）
   architect/plan.md            计划森林（a 维护）
   architect/plan_history.md    已完结的计划树（a 维护）
   seeker/options.md            选项（s 与 a 都可写）
@@ -32,7 +32,7 @@ personas/
 
 ## 读写规矩
 - **读没有禁区**；`personas/README.md` 只定各面具的**预设读**与**不能写**（一张表）。开工先读所戴面具的 `MEMORY.md` 中 `#all` 与当前实例两节，条目按需再开。
-- **谁的资料夹谁写**；其他面具可读不可改（`seeker/options.md` 例外，a 也写）。跨面具传话写在自己的资料夹或任务书里，让对方来读。
+- **谁的资料夹谁写**；其他面具可读不可改（例外：`seeker/options.md` a 也写；`architect/backlogs.md` 的条目与状态 e 也可更新）。跨面具传话写在自己的资料夹或任务书里，让对方来读。
 - `MEMORY.md` 是索引：按实例分节（`## #all`、`## #Demo`…），一行一条、指向条目档，不放内容。条目档写绝对日期，标所属实例；一个条目只存一份，与几个实例有关就在几节各列一行。
 - **不重复项目已有文档**：现况、待办、决定、任务与验收、写作规范各有其档；面具资料夹只放那些文档放不下的东西（取舍理由、错误形状、按情境的检查表）。
 - 有值得留的就当场写；没有就不写，不为写而写。

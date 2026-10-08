@@ -1,4 +1,4 @@
-# Persona Masks 0.4.1 · 安装与试用
+# Persona Masks 0.4.2 · 安装与试用
 
 本包为试用中的文件型 skill；只有 Markdown 指令与可选 Codex UI 元数据，没有服务、数据库或后台监听器。
 包分三部分：**系统核心**（SKILL.md、references/、templates/，一定安装）；**习惯包**（habits/，逐包询问是否安装，装了才写进个人 PROFILE）；项目内容不在包内。
@@ -22,11 +22,16 @@ PROFILE.md、LOG.md、smd.md、kis.md 是个人运行数据，不随包分发；
    | 包 | 一句话 | 依赖 |
    |---|---|---|
    | `module-tweaks` | smd 的行数限制只管终端命令；kis 只对启用的那一则生效 | 无 |
-   | `brief-workflow` | a 写任务书、c 独立审查、e 在另一个 session 实施、c 查验、a 判定（含无原稿时先写大纲、终审与回顾） | 宿主的跨 session 消息、session 改名、任务芯片等；资料目录为 git 仓库 |
+   | `brief-workflow` | a 写任务书、c 独立审查、e 默认由 a 以子 agent 派出实施（可另开 session）、c 查验、a 判定（含无原稿时先写大纲、终审与回顾） | 宿主的子 agent 与独立 worktree（另开 session 时需要跨 session 消息、任务芯片）、session 改名等；资料目录为 git 仓库 |
    | `craft` | 验收标准写得出检查脚本；统计推断先定分析单位；预先验算；起草前对照错误形状自查；另有两条（声明范围、替换句字数） | 无 |
 
 2. 问用户是否安装、装哪几个；不装的照包默认。
-3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.4.1`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
+3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.4.2`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
+
+## 从 0.4.1 升级
+1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留。变化：s 为每个方向写出第一次、第二次、第三次失败时各自的变招，`options.md` 的表格加三列，a 失败时先按变招改；e 也可以更新 `backlogs.md` 的条目与状态；`a:kis:smd:` 的冒号写法同样接受。
+2. 已装 `brief-workflow` 的：`roles.a-e-c-handoff`、`roles.work-cycle` 两条改为默认由 a 以子 agent 派出 e（用户要求时才另开 session），内容不同的逐条询问用户，未答复前保留原条目。
+3. 已有 `personas/` 的项目不自动改；用户同意时再把 `options.md` 补上三列（旧条目填「—」）、`backlogs.md` 的注释改为「a 维护，e 也可更新条目与状态」，并把 `personas/README.md`「不能写」行 e 的一列加上「`architect/backlogs.md` 的条目与状态除外」（项目层优先，不改的话 e 仍不能写）。
 
 ## 从 0.4.0 升级
 1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留。变化：默认入口是 a，不再按目的自动选角色、不自动换面具，a 也能自己提出计划，用户不满意时 a 自动以子 agent 呼叫 s；直接用 `s:`、`d:`、`c:`、`e:` 前缀时照办并标「直接入口，未经 a 判定」；s 不再限定「五个方向」，取消探索模式（删去 `references/explore.md`），s 一律先读 `options.md`、不与已有条目重复，对条件逐项标已满足／未满足／不确定；a 追问每个方向有几种执行可能；a 接手后先弄清现状；每则回复首行标角色与实例；项目没有 `personas/` 时在主会话首次戴面具提示一次；新增 `plan.md`（计划森林）与 `plan_history.md`（完结后迁出），`options.md` 由 a 与 s 都可以写。这些随核心安装，不写进 PROFILE（「已婉拒的项目」只在用户明确要求不再提示时才记）。

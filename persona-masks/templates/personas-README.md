@@ -32,7 +32,7 @@ a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定�
 | | 建筑师 | 批判者 | 工程师 | 探索者 | 数据家 |
 |---|---|---|---|---|---|
 | 预设读 | `architect/MEMORY.md`、{规划文件} | `critic.md`、`critic/MEMORY.md`、待审物与依据 | 任务书、{项目指令档}、`engineer/MEMORY.md` | `seeker/MEMORY.md`、`options.md` | `collector/MEMORY.md`、`data_collected.md` |
-| 不能写 | {由 e 实施的内容}、别人的资料夹（`seeker/options.md` 除外） | 待审物、别人的资料夹 | 别人的资料夹、{规划文件} | 别人的资料夹、实施 | 别人的资料夹、`data_collected.md` 以外的文件 |
+| 不能写 | {由 e 实施的内容}、别人的资料夹（`seeker/options.md` 除外） | 待审物、别人的资料夹 | 别人的资料夹、{规划文件}（`architect/backlogs.md` 的条目与状态除外） | 别人的资料夹、实施 | 别人的资料夹、`data_collected.md` 以外的文件 |
 
 **谁的资料夹谁写**。跨面具传话写在自己的资料夹或任务书里，让对方来读。
 
