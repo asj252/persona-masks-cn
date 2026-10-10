@@ -11,7 +11,7 @@
 模板对应：`personas-README.md` → `personas/README.md`；`INSTANCES.md`；`outline.md` → `personas/architect/outline.md`；`backlogs.md` → `personas/architect/backlogs.md`；`plan.md` → `personas/architect/plan.md`；`plan-history.md` → `personas/architect/plan_history.md`；`options.md` → `personas/seeker/options.md`；`data-collected.md` → `personas/collector/data_collected.md`；`MEMORY.md` → `personas/<面具>/MEMORY.md`；`critic.md`；`critic-shapes.md` → `personas/critic/shapes.md`；`critic-log.md` → `personas/critic/log.md`；`engineer-preflight.md` → `personas/engineer/preflight.md`。后三者属于下文「项目可采用的做法」，不采用就不建。
 
 ## 首次提示
-在主会话的项目目录里（有 `.git` 或明显的项目文件，家目录不算）首次戴主角色、该项目没有 `personas/`、本次会话还没提示过时，在首行标签之后提示一次，一行：本项目没有项目层记忆，要建吗？（最小／全套／不建；想不再提示请明说）。「最小」指 `README.md` 加所戴面具的 `MEMORY.md`。用户说「不建」只对本次会话生效，新会话照常提示一次；只有用户明确表述「不再提示」，才在资料目录的 PROFILE 记一行「已婉拒的项目」，只记项目路径（条目键 `project.declined`，来源栏填本次 LOG 事件键，并记 LOG；换克隆路径或 worktree 会重新提示），之后该项目不再提示。纯聊天、没有项目目录、只用共用模块、网页端、a 派发的子 agent、任务书拉起的、为独立审查另开的上下文不提示。提示不等于建立，用户同意后才建。
+在主会话的项目目录里（目录里有 `.git`，或有 `AGENTS.md`、`CLAUDE.md`、`README.md` 之一；家目录不算）首次戴主角色、该项目没有 `personas/`、本次会话还没提示过时，在首行标签之后提示一次，一行：本项目没有项目层记忆，要建吗？（最小／全套／不建；想不再提示请明说）。「最小」指 `README.md` 加所戴面具的 `MEMORY.md`。用户说「不建」只对本次会话生效，新会话照常提示一次；只有用户明确表述「不再提示」，才在资料目录的 PROFILE 记一行「已婉拒的项目」，只记项目路径（条目键 `project.declined`，来源栏填本次 LOG 事件键，并记 LOG；换克隆路径或 worktree 会重新提示），之后该项目不再提示。纯聊天、没有项目目录、只用共用模块、网页端、a 派发的子 agent、任务书拉起的、为独立审查另开的上下文不提示。提示不等于建立，用户同意后才建。
 
 ## 结构
 ```text
@@ -35,7 +35,7 @@ personas/
 - **谁的资料夹谁写**；其他面具可读不可改（例外：`seeker/options.md` a 也写；`architect/backlogs.md` 的条目与状态 e 也可更新）。跨面具传话写在自己的资料夹或任务书里，让对方来读。
 - `MEMORY.md` 是索引：按实例分节（`## #all`、`## #Demo`…），一行一条、指向条目档，不放内容。条目档写绝对日期，标所属实例；一个条目只存一份，与几个实例有关就在几节各列一行。
 - **不重复项目已有文档**：现况、待办、决定、任务与验收、写作规范各有其档；面具资料夹只放那些文档放不下的东西（取舍理由、错误形状、按情境的检查表）。
-- 有值得留的就当场写；没有就不写，不为写而写。
+- 每个面具写自己的记忆，写在自己的资料夹，不替别的面具写。当场写的有三类：用户说「记下」「记住」（写在哪里按「教训放哪」一节的判准；判为项目指令档的，先提出规则句，经用户同意再写）；用户纠正了本面具的做法（写被纠正的做法和纠正后的做法）；本面具的产出被判定（采纳、否决、成立、不成立）时，写判定的理由或错误形状。其余不当场写。
 
 ## 教训放哪
 判准只有一句：**不管戴哪个面具，不知道这件事就会出事吗？**
