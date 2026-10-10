@@ -1,4 +1,4 @@
-# Persona Masks 0.5.1 · 安装与试用
+# Persona Masks 0.5.2 · 安装与试用
 
 本包为试用中的文件型 skill；只有 Markdown 指令与可选 Codex UI 元数据，没有服务、数据库或后台监听器。
 包分三部分：**系统核心**（SKILL.md、references/、templates/，一定安装）；**习惯包**（habits/，逐包询问是否安装，装了才写进个人 PROFILE）；项目内容不在包内。
@@ -26,9 +26,13 @@ PROFILE.md、LOG.md、smd.md、kis.md 是个人运行数据，不随包分发；
    | `craft` | 验收标准写得出检查脚本；统计推断先定分析单位；预先验算；起草前对照错误形状自查；另有五条（声明范围、替换句字数、替换表、未舍入的差值、c 的替换句预检） | 无 |
 
 2. 问用户是否安装、装哪几个；不装的照包默认。
-3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.5.1`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
+3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.5.2`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
 
 升级说明按版本从新到旧排列，每一节只写该版本相对前一版本的变化；从更早的版本升级时，从对应的一节读起，向上依次读完每一节，各节里的迁移都要做。
+
+## 从 0.5.1 升级
+1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留。变化：`roles.md` 的 s 与 d 加续用规定（同一单元以宿主的消息工具续用，派给 cli 时按宿主做得到的方式续用，不能续用就重开，仍是独立上下文）；习惯包 `brief-workflow` 的 e 改为返工续用（同一任务书的所有返工都续用原来的 e、在原分支接着提交，a 把修订提交到 e 的分支上，检查以最初的起点为准），`roles.report-channel` 写明 e 与 s 默认子 agent、持续的 c 与 d 按各自的派发偏好，以及持续的 c、s、d 的续用；任务书模板的「执行」一行与回报说明同步；来源栏示例改标 `@0.5.2`。
+2. 已装 `brief-workflow` 的用户：`roles.a-e-c-handoff`、`roles.report-channel` 两条按 [习惯包](habits/README.md) 的升级规则逐条询问是否更新 PROFILE，不自动改。
 
 ## 从 0.5.0 升级
 1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留。变化：记忆：a 有特权，可以写别的面具资料夹里的记忆，面具是已结束的子 agent 时由 a 在判定时代写（`project-memory.md`、`roles.md`、`personas-README.md` 同步）；`project-memory.md` 加一句：项目层可以指定进度源，指定了进度源的项目不要求建 `plan.md`；`SKILL.md` 第 29 行去掉 0.5.0 加的 wid 括注，改为「模块的调用方式以各自的参考文件为准」（`wid` 仍只接受 `wid:` 前缀与 `$wid` 模块写法，规则在 `wid.md`）；习惯包 `brief-workflow` 的 `roles.work-cycle` 加「无人值守」一段、`roles.a-e-c-handoff` 加终审一句、写明 e 不续用（每个任务书新开一个，返工也新开）并把引用的核心旧句对齐新句，`craft` 新增 `craft.replacement-table`、`craft.unrounded-diff`、`craft.c-sentence-precheck` 三条；来源栏示例改标 `@0.5.1`。

@@ -2,7 +2,7 @@
 name: persona-masks
 description: "使用、试用或调整人格面具系统：s/a/e/c/d 主角色（探索者、建筑师、工程师、批判者、数据家）、kis/smd/wid（写成文件）共用模块、循环 asd、实例和问题前缀。用户调用 persona-masks、人格面具、a$kis$smd、a:kis:smd:、asd: 等前缀，或明确调整这些规则时使用；普通代码、简短回答或软件主题设置请求不单独触发。"
 metadata:
-  version: "0.5.1"
+  version: "0.5.2"
 ---
 
 # 人格面具 · 试用版
