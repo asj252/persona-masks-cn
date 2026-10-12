@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 384" width="1200" height="384" role="img" aria-labelledby="t d">
+  <title id="t">人格面具 persona-masks：不写形容词，写数得出的规则</title>
+  <desc id="d">动脑想：不写请发挥创意，改成先读已有选项、不许重复、每个方向写三次变招。动手做：不写请仔细检查，改成另一个面具审、重跑检查脚本、a 按输出判定。</desc>
+  <g id="card">
+    <rect x="12" y="14" width="1180" height="362" rx="28" fill="#1A1423" opacity="0.14"/>
+    <rect x="4" y="4" width="1180" height="362" rx="28" fill="#FFFFFF" stroke="#1A1423" stroke-width="3"/>
+  </g>
+  <text x="60" y="72" font-family="ui-monospace,'SFMono-Regular',Consolas,monospace" font-size="15" fill="#57068C" font-weight="700" letter-spacing="2.5">AGENT SKILL · MARKDOWN</text>
+  <text x="58" y="128" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="52" fill="#1A1423" font-weight="760" letter-spacing="-1.5">人格面具</text>
+  <text x="276" y="128" font-family="ui-monospace,'SFMono-Regular',Consolas,monospace" font-size="24" fill="#6E6680">persona-masks</text>
+  <text x="60" y="180" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="26" fill="#1A1423" font-weight="700">不写「请发挥创意」「请仔细检查」，写数得出的规则。</text>
+  <g transform="translate(92 243) scale(0.4)" stroke="#1A1423" stroke-linejoin="round" stroke-linecap="round"><path d="M-44 8a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#1A1423" stroke="none" opacity="0.16"/><path d="M-50 0a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#FBF6EA" stroke-width="4.5"/><path d="M0 -44 L5 -30 L19 -25 L5 -20 L0 -6 L-5 -20 L-19 -25 L-5 -30Z" fill="#F5A623" stroke-width="2.6"/>
+      <circle cx="-19" cy="10" r="10" fill="#4A4AA8" stroke-width="3"/>
+      <circle cx="19" cy="10" r="10" fill="#4A4AA8" stroke-width="3"/></g>
+  <text x="130" y="252" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="26" fill="#1A1423" font-weight="760">动脑想</text>
+  <text x="232" y="252" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="24" fill="#6E6680">「请发挥创意」</text><path d="M228 243.6 L400 243.6" stroke="#57068C" stroke-width="2.2" stroke-opacity="0.85" stroke-linecap="round"/>
+  <path d="M416 244 L456 244 M447 237 L456 244 L447 251" fill="none" stroke="#57068C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="474" y="224" width="159" height="40" rx="20" fill="#F3EEF8" stroke="#57068C" stroke-width="2"/><text x="553.5" y="253" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="22" fill="#1A1423" text-anchor="middle">先读已有选项</text>
+  <rect x="645" y="224" width="116" height="40" rx="20" fill="#F3EEF8" stroke="#57068C" stroke-width="2"/><text x="703.0" y="253" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="22" fill="#1A1423" text-anchor="middle">不许重复</text>
+  <rect x="773" y="224" width="224" height="40" rx="20" fill="#F3EEF8" stroke="#57068C" stroke-width="2"/><text x="885.0" y="253" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="22" fill="#1A1423" text-anchor="middle">每个方向写三次变招</text>
+  <g transform="translate(92 317) scale(0.4)" stroke="#1A1423" stroke-linejoin="round" stroke-linecap="round"><path d="M-44 8a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#1A1423" stroke="none" opacity="0.16"/><path d="M-50 0a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#FFFFFF" stroke-width="4.5"/><path d="M-36 -24 L-8 -19 L-8 -11 Z" fill="#8B2BE2" stroke-width="2.6"/>
+      <path d="M4 -17 L30 -34 L36 -27 L9 -10Z" fill="#8B2BE2" stroke-width="2.6"/>
+      <path d="M-32 0 L-10 0" stroke-width="3"/>
+      <path d="M-27 0 a6 6 0 0 0 12 0Z" fill="#8B2BE2" stroke-width="2"/>
+      <circle cx="18" cy="4" r="14" fill="#B98AF0" stroke-width="3.5"/>
+      <path d="M11 -2 L20 -9 M10 6 L24 -6" stroke="#FFFFFF" stroke-width="2.2"/></g>
+  <text x="130" y="326" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="26" fill="#1A1423" font-weight="760">动手做</text>
+  <text x="232" y="326" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="24" fill="#6E6680">「请仔细检查」</text><path d="M228 317.6 L400 317.6" stroke="#57068C" stroke-width="2.2" stroke-opacity="0.85" stroke-linecap="round"/>
+  <path d="M416 318 L456 318 M447 311 L456 318 L447 325" fill="none" stroke="#57068C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="474" y="298" width="159" height="40" rx="20" fill="#F3EEF8" stroke="#57068C" stroke-width="2"/><text x="553.5" y="327" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="22" fill="#1A1423" text-anchor="middle">另一个面具审</text>
+  <rect x="645" y="298" width="159" height="40" rx="20" fill="#F3EEF8" stroke="#57068C" stroke-width="2"/><text x="724.5" y="327" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="22" fill="#1A1423" text-anchor="middle">重跑检查脚本</text>
+  <rect x="816" y="298" width="180" height="40" rx="20" fill="#F3EEF8" stroke="#57068C" stroke-width="2"/><text x="906.0" y="327" font-family="'PingFang SC','Microsoft YaHei','Noto Sans CJK SC','Segoe UI',sans-serif" font-size="22" fill="#1A1423" text-anchor="middle">a 按输出判定</text>
+  <g transform="translate(842 106) scale(0.46)" stroke="#1A1423" stroke-linejoin="round" stroke-linecap="round"><path d="M-44 8a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#1A1423" stroke="none" opacity="0.16"/><path d="M-50 0a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#FBF6EA" stroke-width="4.5"/><path d="M0 -44 L5 -30 L19 -25 L5 -20 L0 -6 L-5 -20 L-19 -25 L-5 -30Z" fill="#F5A623" stroke-width="2.6"/>
+      <circle cx="-19" cy="10" r="10" fill="#4A4AA8" stroke-width="3"/>
+      <circle cx="19" cy="10" r="10" fill="#4A4AA8" stroke-width="3"/></g>
+  <g transform="translate(912 106) scale(0.46)" stroke="#1A1423" stroke-linejoin="round" stroke-linecap="round"><path d="M-44 8a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#1A1423" stroke="none" opacity="0.16"/><path d="M-50 0a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#FFFFFF" stroke-width="4.5"/><rect x="-32" y="-14" width="20" height="20" rx="3" fill="#8EDC1E" stroke-width="3"/>
+      <rect x="12" y="-14" width="20" height="20" rx="3" fill="#8EDC1E" stroke-width="3"/>
+      <g fill="#8EDC1E" stroke="none"><circle cx="-7" cy="20" r="2.6"/><circle cx="0" cy="20" r="2.6"/><circle cx="7" cy="20" r="2.6"/><circle cx="-7" cy="27" r="2.6"/><circle cx="0" cy="27" r="2.6"/><circle cx="7" cy="27" r="2.6"/><circle cx="-7" cy="34" r="2.6"/><circle cx="0" cy="34" r="2.6"/><circle cx="7" cy="34" r="2.6"/></g></g>
+  <g transform="translate(982 106) scale(0.46)" stroke="#1A1423" stroke-linejoin="round" stroke-linecap="round"><path d="M-44 8a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#1A1423" stroke="none" opacity="0.16"/><path d="M-50 0a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#FFFFFF" stroke-width="4.5"/><path d="M0 -42 L13 -24 L0 -6 L-13 -24Z M-13 -24 L13 -24 M0 -42 L0 -6" fill="#1CC6E8" stroke-width="2.6"/>
+      <rect x="-30" y="2" width="14" height="28" rx="3" fill="#1CC6E8" stroke-width="2.6"/>
+      <rect x="16" y="2" width="14" height="28" rx="3" fill="#1CC6E8" stroke-width="2.6"/></g>
+  <g transform="translate(1052 106) scale(0.46)" stroke="#1A1423" stroke-linejoin="round" stroke-linecap="round"><path d="M-44 8a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#1A1423" stroke="none" opacity="0.16"/><path d="M-50 0a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#FFFFFF" stroke-width="4.5"/><circle cx="-17" cy="-10" r="14" fill="none" stroke-width="6" stroke-dasharray="4 3.33"/>
+      <circle cx="17" cy="-10" r="14" fill="none" stroke-width="6" stroke-dasharray="4 3.33"/>
+      <circle cx="-17" cy="-10" r="12" fill="#F7931E" stroke-width="2.6"/>
+      <circle cx="17" cy="-10" r="12" fill="#F7931E" stroke-width="2.6"/>
+      <circle cx="-17" cy="-10" r="3.5" fill="#FBF6EA" stroke-width="2"/>
+      <circle cx="17" cy="-10" r="3.5" fill="#FBF6EA" stroke-width="2"/>
+      <path d="M-25 14 L-8 14 L-5 10 L5 10 L8 14 L25 14 L20 34 Q0 41 -20 34Z" fill="#3A3540" stroke-width="3"/>
+      <path d="M-12 16 V36 M-4 14 V38 M4 14 V38 M12 16 V36 M-20 22 H20 M-18 29 H18" stroke="#8A8494" stroke-width="1.4"/></g>
+  <g transform="translate(1122 106) scale(0.46)" stroke="#1A1423" stroke-linejoin="round" stroke-linecap="round"><path d="M-44 8a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#1A1423" stroke="none" opacity="0.16"/><path d="M-50 0a50 58 0 1 0 100 0a50 58 0 1 0 -100 0z" fill="#FFFFFF" stroke-width="4.5"/><path d="M-36 -24 L-8 -19 L-8 -11 Z" fill="#8B2BE2" stroke-width="2.6"/>
+      <path d="M4 -17 L30 -34 L36 -27 L9 -10Z" fill="#8B2BE2" stroke-width="2.6"/>
+      <path d="M-32 0 L-10 0" stroke-width="3"/>
+      <path d="M-27 0 a6 6 0 0 0 12 0Z" fill="#8B2BE2" stroke-width="2"/>
+      <circle cx="18" cy="4" r="14" fill="#B98AF0" stroke-width="3.5"/>
+      <path d="M11 -2 L20 -9 M10 6 L24 -6" stroke="#FFFFFF" stroke-width="2.2"/></g>
+</svg>
