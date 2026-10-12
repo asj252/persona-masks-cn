@@ -8,7 +8,7 @@
 
 ## 何时建立
 不自动建立。由用户要求，或 a 提出、用户同意后，把本包 `templates/` 中需要的模板复制进项目，只建用得上的面具资料夹。
-模板对应：`personas-README.md` → `personas/README.md`；`INSTANCES.md`；`outline.md` → `personas/architect/outline.md`；`backlogs.md` → `personas/architect/backlogs.md`；`plan.md` → `personas/architect/plan.md`；`plan-history.md` → `personas/architect/plan_history.md`；`options.md` → `personas/seeker/options.md`；`data-collected.md` → `personas/collector/data_collected.md`；`MEMORY.md` → `personas/<面具>/MEMORY.md`；`critic.md`；`critic-shapes.md` → `personas/critic/shapes.md`；`critic-log.md` → `personas/critic/log.md`；`engineer-preflight.md` → `personas/engineer/preflight.md`。后三者属于下文「项目可采用的做法」，不采用就不建。
+模板对应：`personas-README.md` → `personas/README.md`；`INSTANCES.md`；`outline.md` → `personas/architect/outline.md`；`backlogs.md` → `personas/architect/backlogs.md`；`plan.md` → `personas/architect/plan.md`；`plan-history.md` → `personas/architect/plan_history.md`；`options.md` → `personas/seeker/options.md`；`option-file.md` → `personas/seeker/options/<YYYY-MM-DD>-<短名>.md`（一个问题一份）；`handoff.md` → 项目的交接文件（位置由项目定，如根目录的 `HANDOFF.md`）；`data-collected.md` → `personas/collector/data_collected.md`；`MEMORY.md` → `personas/<面具>/MEMORY.md`；`critic.md`；`critic-shapes.md` → `personas/critic/shapes.md`；`critic-log.md` → `personas/critic/log.md`；`engineer-preflight.md` → `personas/engineer/preflight.md`。后三者属于下文「项目可采用的做法」，不采用就不建。
 
 ## 首次提示
 在主会话的项目目录里（目录里有 `.git`，或有 `AGENTS.md`、`CLAUDE.md`、`README.md` 之一；家目录不算）首次戴主角色、该项目没有 `personas/`、本次会话还没提示过时，在首行标签之后提示一次，一行：本项目没有项目层记忆，要建吗？（最小／全套／不建；想不再提示请明说）。「最小」指 `README.md` 加所戴面具的 `MEMORY.md`。用户说「不建」只对本次会话生效，新会话照常提示一次；只有用户明确表述「不再提示」，才在资料目录的 PROFILE 记一行「已婉拒的项目」，只记项目路径（条目键 `project.declined`，来源栏填本次 LOG 事件键，并记 LOG；换克隆路径或 worktree 会重新提示），之后该项目不再提示。纯聊天、没有项目目录、只用共用模块、网页端、a 派发的子 agent、任务书拉起的、为独立审查另开的上下文不提示。提示不等于建立，用户同意后才建。
@@ -25,16 +25,18 @@ personas/
   architect/backlogs.md        待办（a 维护，e 也可更新条目与状态）
   architect/plan.md            计划森林（a 维护）
   architect/plan_history.md    已完结的计划树（a 维护）
-  seeker/options.md            选项（s 与 a 都可写）
+  seeker/options.md            选项目录，链接到 seeker/options/ 下的选项档案（s 与 a 都可写）
   collector/data_collected.md  资料（d 维护）
 ```
 后六份是管理项目的核心文件，用到时才从模板建立；项目已有等价的文档（如根目录的大纲或待办）时，在 `personas/README.md` 指向它，不重复建；没有 `personas/` 的项目，`options.md`、`plan.md` 与 `data_collected.md` 一样先问用户记在哪里，或只写在回复里。分工：`outline.md` 管结构与已决定的事，`backlogs.md` 管还没排期的单条事项，`plan.md` 管有层级、有完结的路线，`options.md` 的通过方向要做时，转成计划的节点或待办的一行，或直接写任务书。项目层可以指定进度源（如 `personas/INSTANCES.md` 的单元状态表），并允许大纲每行末尾保留一句「已完成（日期）」作为总览；这是对 `outline.md`「不记进度」与 `plan.md`「记进度」的项目层例外。指定了进度源的项目不要求建 `plan.md`；这类项目里 `plan.md` 只在用 asd 循环或多条并行计划时才建。
 
 ## 读写规矩
 - **读没有禁区**；`personas/README.md` 只定各面具的**预设读**与**不能写**（一张表）。开工先读所戴面具的 `MEMORY.md` 中 `#all` 与当前实例两节，条目按需再开。
-- **谁的资料夹谁写**；其他面具可读不可改（例外：a 有特权，可以写其他面具资料夹里的记忆；`seeker/options.md` a 也写；`architect/backlogs.md` 的条目与状态 e 也可更新）。跨面具传话写在自己的资料夹或任务书里，让对方来读。
+- **谁的资料夹谁写**；其他面具可读不可改（例外：a 有特权，可以写其他面具资料夹里的记忆；`seeker/options.md` 与 `seeker/options/` 下的选项档案 a 也写；`architect/backlogs.md` 的条目与状态 e 也可更新）。跨面具传话写在自己的资料夹或任务书里，让对方来读。
 - `MEMORY.md` 是索引：按实例分节（`## #all`、`## #Demo`…），一行一条、指向条目档，不放内容。条目档写绝对日期，标所属实例；一个条目只存一份，与几个实例有关就在几节各列一行。
 - **不重复项目已有文档**：现况、待办、决定、任务与验收、写作规范各有其档；面具资料夹只放那些文档放不下的东西（取舍理由、错误形状、按情境的检查表）。
+- **状态只写一处**：任务与计划节点的当前状态只写在进度源（默认 `architect/plan.md`；项目指定了进度源的写在那里，见上文「结构」）。进度源只由 a 写（`architect/backlogs.md` 的例外照旧），每行写短状态与指向任务书的链接，长说明放任务书或单独的档。任务书的状态栏与 e 的回报是该任务自己的记录，照写，e 不改进度源。大纲、交接、汇总与回顾不另写状态句，引用进度源（大纲行末的「已完成（日期）」是上文允许的总览例外）。项目可以加一个检查脚本，找出别处与进度源不一致的状态句。
+- **交接只放指针**：交接文件按模板 `handoff.md` 分节（当前状态、已决定、队列、规则、派发命令、文件地图、开场步骤），状态与决定写成指向进度源、大纲与指令档的链接，不复写内容。写交接之前先提交：未提交的文件在别的 worktree 与云端会话里看不到；项目不是 git 仓库的，写明交接的时间。
 - 每个面具写自己的记忆，写在自己的资料夹，不替别的面具写（a 有特权，可以写别的面具的记忆）。当场写的有三类：用户说「记下」「记住」（写在哪里按「教训放哪」一节的判准；判为项目指令档的，先提出规则句，经用户同意再写）；用户纠正了本面具的做法（写被纠正的做法和纠正后的做法）；本面具的产出被判定（采纳、否决、成立、不成立）时，写判定的理由或错误形状（面具是已结束的子 agent 时，由 a 在判定时代写）。其余不当场写。
 
 ## 教训放哪
@@ -46,10 +48,10 @@ personas/
 
 ## 项目可采用的做法
 下列做法**不是默认**，也不写成默认循环的一步；项目在 `personas/README.md` 或 `personas/critic.md` 写明采用哪几项才生效：
-- **一个单元一个持续的 c**：单元（如 `#Demo/U{编号}`）内的任务书与交付都送同一个 c；单元结束就关，下一单元另开，跨单元经验只经错误形状传递。
+- **一个单元一个持续的 c**：单元（如 `#Demo/U{编号}`）内的任务书与交付都送同一个 c；单元结束就关，下一单元另开，跨单元经验只经错误形状传递。载体无法续用时，「持续」指同一份记忆与错误形状，不指同一个会话（见 [角色](roles.md) 的 c 段）。
 - **c 写审计产出**：c 可以写项目的审计目录（诊断结果、报告），由 a 提交；c 仍不改待审物。（装了 `brief-workflow` 的，由该包规定。）
 - **终审另开干净上下文的 c**：单元终审由新开的 c 执行，先只拿产物做冷读并写下记录，之后才读基线诊断；终审完成前不读本单元的任务书与 c 的记录。（装了 `brief-workflow` 的，由该包规定。）
-- **c 的 `shapes.md` 与 `log.md`**：反复出现的错误形状（长什么样、这次怎么露出来、最便宜的鉴别）；每次送审记一行，事后回填挡下或误报，定期回看，只是多了仪式就撤掉。
+- **c 的 `shapes.md` 与 `log.md`**：反复出现的错误形状（长什么样、这次怎么露出来、最便宜的鉴别）；每次送审记一行，事后由 a 回填挡下或误报（c 多半已经结束），定期回看，只是多了仪式就撤掉。
 - **工程师的按情境检查表**（`engineer/preflight.md`）：按情境列指针与一句提醒，内文以项目指令档为准。
 - **单元结束后的回顾**：a 把本单元的新经验按上文判准分派到面具资料夹或指令档（后者经用户同意）。
 - **起草任务书前对照错误形状自查**。（装了 `craft` 的，由该包规定。）
