@@ -4,7 +4,7 @@
 
 ## 保留与取消
 - **保留**：s、a、e、c、d 的角色规则；kis、smd 的讲解规则；循环 asd。这些规则在 `roles.md`、`loops.md`、`kis.md`、`smd.md` 里，没有被带进网页端的，对应规则不可用，要说明。
-- **取消**：资料目录（PROFILE、LOG、`smd.md`、`kis.md`）；项目层 `personas/` 的其余文件；`wid`；习惯包；派发到 codex cli、antigravity cli。取消后 kis 不查表（凭当前对话选元素，仍先写公式），smd 照常设检查点但不存档。
+- **取消**：资料目录（PROFILE、LOG、`smd.md`、`kis.md`）；项目层 `personas/` 的其余文件；`wid`；习惯包；派发到外部 cli。取消后 kis 不查表（凭当前对话选元素，仍先写公式），smd 照常设检查点但不存档。
 - **只手动维护一份文件** `persona_brain.md`：把项目层的 `outline.md`、`backlogs.md`、`plan.md`、`plan_history.md`、`options.md`、`data_collected.md` 合成同一份，六节的列与格式与项目层模板相同（标题降一级），不简化。
 - **a 与 s**：同一对话里「不告诉 s 倾向」和 a 读 `options.md` 的范围做不到，首次发生时说明一次，不伪装。
 - **c**：在同一对话里不是独立审查，不冒称；需要时请用户另开一个新对话，只贴产物与依据，让那个对话戴 c。
