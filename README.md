@@ -128,6 +128,12 @@ flowchart LR
 
 本仓库是中文版，开发阶段以中文为准；英文版在规则成熟后翻译，另设仓库。
 
+## 相关仓库
+
+同一作者的其他 skill 仓库：
+
+- [writing-forge](https://github.com/asj252/writing-forge)：写作用的 skill：讲解文章的认知审查、忠于原文的简报、README 头图设计。
+
 ## 许可证
 
 Apache License 2.0，全文见 [LICENSE](LICENSE)。
