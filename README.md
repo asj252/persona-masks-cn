@@ -132,6 +132,7 @@ flowchart LR
 
 同一作者的其他 skill 仓库：
 
+- [myst-textbook-forge](https://github.com/asj252/myst-textbook-forge)：用 MyST 写教科书的工具：章节编辑、视觉风格与 Python 代码整理。
 - [writing-forge](https://github.com/asj252/writing-forge)：写作用的 skill：讲解文章的认知审查、忠于原文的简报、README 头图设计。
 
 ## 许可证
