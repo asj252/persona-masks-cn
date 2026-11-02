@@ -6,13 +6,13 @@
 
 | 代号 | 面具 | 在本项目做什么 | 专属记忆 |
 |---|---|---|---|
-| `a` | 建筑师 | 觉得该怎么做：{规划、维护 `outline.md`、`backlogs.md`、`plan.md` 与 `plan_history.md`、起草任务书、判定合格与否、合并……} | `architect/` |
+| `a` | 建筑师 | 觉得该怎么做：{规划、维护 `outline.md`（含工作线与战役指针表）、子项目 `PLAN.md`（或 `plan.md`）、`backlogs.md` 与 `plan_history.md`、起草任务书、判定合格与否、合并……} | `architect/` |
 | `c` | 批判者 | 挑毛病：{诊断、审任务书、查验交付……；见 `critic.md`} | `critic/` |
 | `e` | 工程师 | {实施、自测、回报……} | `engineer/` |
-| `s` | 探索者 | 想方向：{提方向、维护 `options.md`……} | `seeker/` |
+| `s` | 思索者 | 想方向：{提方向、维护 `options.md`……} | `spark/` |
 | `d` | 数据家 | 找资料：{查来源、维护 `data_collected.md`……} | `collector/` |
 
-a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定归 a。用不上的面具不建资料夹；需要时再建。
+a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定归 a。用不上的面具不建资料夹；需要时再建。启用 kis 时，项目共用元素表在 `kis.md`（或本项目等价表：{路径}），由 a、启用 kis 且有写权限的 s／e／d，或单用 kis 且有写权限的执行者维护（c 或受写权限限制时只读查表，新条目在回复中给出，有 a 时交 a 记入、单用时供用户保存，c 不改待审物）；不受下表「别人的资料夹」限制。
 
 ## 1. 实例与单元
 
@@ -27,12 +27,12 @@ a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定�
 
 ## 3. 读与写
 
-读没有禁区；这里只定**预设读**与**不能写**；资料目录里 LOG、PROFILE 的写入和 wid 的写入按各自的规则，不受本表限制。
+读没有禁区；这里只定**预设读**与**不能写**；资料目录里 LOG、PROFILE 的写入、wid 的写入与启用 kis 时项目 `kis.md` 的写入按各自的规则，不受本表限制（仍受宿主与任务书权限及 c 只读限制）。
 
-| | 建筑师 | 批判者 | 工程师 | 探索者 | 数据家 |
+| | 建筑师 | 批判者 | 工程师 | 思索者 | 数据家 |
 |---|---|---|---|---|---|
-| 预设读 | `architect/MEMORY.md`、{规划文件} | `critic.md`、`critic/MEMORY.md`、待审物与依据 | 任务书、{项目指令档}、`engineer/MEMORY.md` | `seeker/MEMORY.md`、`options.md` | `collector/MEMORY.md`、`data_collected.md` |
-| 不能写 | {由 e 实施的内容}、别人的资料夹里记忆以外的文件（`seeker/options.md` 与 `seeker/options/` 除外） | 待审物、别人的资料夹 | 别人的资料夹、{规划文件}（`architect/backlogs.md` 的条目与状态除外） | 别人的资料夹、实施 | 别人的资料夹、自己资料夹以外的文件（获授权的资料记录文件除外） |
+| 预设读 | `architect/MEMORY.md`、{规划文件} | `critic.md`、`critic/MEMORY.md`、待审物与依据 | 任务书、{项目指令档}、`engineer/MEMORY.md` | `spark/MEMORY.md`、`options.md` | `collector/MEMORY.md`、`data_collected.md` |
+| 不能写 | {由 e 实施的内容}、别人的资料夹里记忆以外的文件（`spark/options.md` 与 `spark/options/` 除外） | 待审物、别人的资料夹、`kis.md` | 别人的资料夹、{规划文件}（`architect/backlogs.md` 的条目与状态除外） | 别人的资料夹、实施 | 别人的资料夹、自己资料夹以外的文件（获授权的资料记录文件与启用 kis 时的 `kis.md` 除外） |
 
 **谁的资料夹谁写**。跨面具传话写在自己的资料夹或任务书里，让对方来读。
 
