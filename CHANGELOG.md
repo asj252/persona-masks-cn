@@ -1,5 +1,17 @@
 # 变更记录
 
+## 未发布
+
+### persona-masks
+
+- 新增共用模块与项目层组件 `kb`（项目核心知识库，`references/kb.md` 与 `templates/kb-PROTOCOL.md`、`kb-theme.md`、`kb-card-external.md`、`kb-card-internal.md`）：支持 `a$kb:`、`d$kb:`、`s$kb:`、`kb:` 或自然语言调用，项目存在 `kb/` 或 `lit_kb/` 时默认执行 Index-First（先读围绕本项目 2–5 个核心工作线／问题／模块建立的 Tier 2 `themes/*.md` 路由表，按需展开 Tier 3）；确立「外部核心基准（Top 10%–20%）+ 本项目内部自产知识点（`type: internal_finding`, `stance: our_finding`，档名 `internal_{slug}.md`，含已验证正结论与被实测证伪的死胡同）」双源沉淀、`_archive/` 冷宫封存与 4 类项目（科研实证、软件/AI 系统工程、数据竞赛、专书写作）字段映射；规定 `a` 与 `d` 均可写 `kb/`，并在 `brief-workflow` 习惯包 `roles.work-cycle` 加入文献查询与自主运行收尾的双源沉淀钩子。
+
+## 0.8.1
+
+### persona-masks
+
+- 实验如何冷冻（含项目层、`roles.md`、`plan.md` 模板及习惯包 `brief-workflow` `roles.work-cycle`、`craft` 新增第 12 条 `craft.experiment-freeze`）：活体进度源与单实验冻结哈希严格分离，承载日常步骤树、跨实验排期与后续实验增补的活体进度源（如 `<子目录>/PROGRESS.md` 或持续演进的总纲档）不得纳入单实验 `freeze.json` 或公开预注册离线校验器（`verify_prereg.py`）的 SHA-256 绑定白名单；每个实验进入冻结与公开预注册时单独抽出自包含冻结规范（如 `exp1-en/PLAN-E1.md` → `PLAN-E1.frozen.md`、`exp2-zh/PLAN-E2.md`），只绑定本实验自身的冻结规范、材料、提示模板与代码哈希；若顶层总纲 `PLAN.md` 早期已被绑入单实验预注册哈希，则就地封存为不可变快照并在法定进度源 `PROGRESS.md` 头部注明不直接改写，日常步骤树与后续实验分流至 `PROGRESS.md` 及各实验独立计划档。
+
 ## 0.8.0
 
 ### persona-masks

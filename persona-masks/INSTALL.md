@@ -1,4 +1,4 @@
-# Persona Masks 0.8.0 · 安装与试用
+# Persona Masks 0.8.1 · 安装与试用
 
 本包为试用中的文件型 skill；只有 Markdown 指令与可选 Codex UI 元数据，没有服务、数据库或后台监听器。
 包分三部分：**系统核心**（SKILL.md、references/、templates/，一定安装）；**习惯包**（habits/，逐包询问是否安装，装了才写进个人 PROFILE）；项目内容不在包内。
@@ -24,13 +24,19 @@ PROFILE.md、LOG.md、smd.md 是个人运行数据，不随包分发；首次使
    |---|---|---|
    | `module-tweaks` | smd 的行数限制只管终端命令；kis 只对启用的那一则生效 | 无 |
    | `brief-workflow` | a 写任务书、c 独立审查、e 默认由 a 以子 agent 派出实施（可另开 session）、c 查验、a 判定（含无原稿时先写大纲、终审与回顾） | 宿主的子 agent 与独立 worktree（另开 session 时需要跨 session 消息、任务芯片）、session 改名等；资料目录为 git 仓库 |
-   | `craft` | 验收标准写得出检查脚本；统计推断先定分析单位；预先验算；起草前对照错误形状自查；另有七条（声明范围、替换句字数、替换表、未舍入的差值、c 的替换句预检、判定格子表、数字出处） | 无 |
+   | `craft` | 验收标准写得出检查脚本；统计推断先定分析单位；预先验算；起草前对照错误形状自查；另有八条（声明范围、替换句字数、替换表、未舍入的差值、c 的替换句预检、判定格子表、数字出处、实验冷冻哈希隔离） | 无 |
    | `issue-requests` | 发现 skill 该改的地方时开在固定仓库的 issue；默认先问用户，开不了时有后备，合并后留言再关 | 宿主能执行 `gh` 或同等的 issue 接口并已登录；联网 |
 
 2. 问用户是否安装、装哪几个；不装的照包默认。
-3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.8.0`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
+3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.8.1`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
 
 升级说明按版本从新到旧排列，每一节只写该版本相对前一版本的变化；从更早的版本升级时，从对应的一节读起，向上依次读完每一节，各节里的迁移都要做。
+
+## 未发布改动的迁移（发布版本待定）
+1. 新增共用模块与项目层组件 `kb`（项目核心知识库，见 `references/kb.md` 与 `templates/kb-*.md`）：支持 `a$kb:`、`d$kb:`、`s$kb:`、`kb:` 或自然语言调用；当项目存在 `kb/` 或 `lit_kb/` 时，`a`、`d`、`s` 默认执行 Index-First（先读 Tier 2 `themes/*.md` 路由表，按需展开 Tier 3），并由 `a` 与 `d` 共同维护「外部核心基准（`external_ref`／`paper_note`）+ 本项目内部自产知识点（`internal_finding`，档名 `internal_<slug>.md`，含已验证结论与已证伪死胡同）」双源沉淀及 `_archive/` 冷宫封存。已有项目不自动建 `kb/`，经用户同意后按需从 `templates/kb-*.md` 建立。已装 `brief-workflow` 的用户，`roles.work-cycle` 收尾的 `kb/` 双源沉淀条款按 [习惯包](habits/README.md) 升级规则询问是否更新 PROFILE，不自动改。
+
+## 从 0.8.0 升级
+1. 实验如何冷冻（活体进度源与单实验冻结哈希分离）：多实验或公开预注册项目中，承载日常步骤树、跨实验排期与后续实验增补的活体进度源（如 `<子目录>/PROGRESS.md` 或持续演进的总纲档）不得纳入任何单实验的冻结清单（`freeze.json`）或公开预注册离线校验器（`verify_prereg.py`）的 SHA-256 绑定白名单；每个实验在进入冻结（如 S5）与公开预注册时单独生成自包含冻结规范（如 `exp1-en/PLAN-E1.md` → `PLAN-E1.frozen.md`、`exp2-zh/PLAN-E2.md`），只绑定该实验自身的冻结规范、材料、提示模板与代码哈希。已有项目若早期已将顶层总纲 `PLAN.md` 的 SHA-256 绑入单实验的预注册校验器，不自动改写该 `PLAN.md`：将其就地封存为不可变快照，改以同目录的 `PROGRESS.md` 为法定进度源（在头部注明「总纲 `PLAN.md` 受预注册哈希保护，不直接改写」），日常步骤树与新增实验节点统一写入 `PROGRESS.md`，各后续实验的细化设计分别写入各自的独立计划档（如 `exp2-zh/PLAN-E2.md`、`exp3-en/PLAN-E3.md`）。已装 `brief-workflow`（`roles.work-cycle`）或 `craft`（新增 `craft.experiment-freeze`）的用户，按 [习惯包](habits/README.md) 升级规则逐条询问是否更新或加入 PROFILE，不自动改。
 
 ## 从 0.7.0 升级
 1. s 英文名改为 spark、中文改为思索者，代号 `s` 与调用前缀不变；新项目模板用 `personas/spark/`。已有项目不自动改名：用户同意后将 `seeker/` 改名为 `spark/`，同步项目 README、选项目录、档案链接和记忆指针；迁移前继续读写原路径，不并建两套。历史升级节的 `seeker/` 是旧版路径。

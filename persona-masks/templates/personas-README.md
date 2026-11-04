@@ -10,9 +10,9 @@
 | `c` | 批判者 | 挑毛病：{诊断、审任务书、查验交付……；见 `critic.md`} | `critic/` |
 | `e` | 工程师 | {实施、自测、回报……} | `engineer/` |
 | `s` | 思索者 | 想方向：{提方向、维护 `options.md`……} | `spark/` |
-| `d` | 数据家 | 找资料：{查来源、维护 `data_collected.md`……} | `collector/` |
+| `d` | 数据家 | 找资料：{查来源、维护 `data_collected.md` 与 `kb/`（或 `lit_kb/`）……} | `collector/` |
 
-a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定归 a。用不上的面具不建资料夹；需要时再建。启用 kis 时，项目共用元素表在 `kis.md`（或本项目等价表：{路径}），由 a、启用 kis 且有写权限的 s／e／d，或单用 kis 且有写权限的执行者维护（c 或受写权限限制时只读查表，新条目在回复中给出，有 a 时交 a 记入、单用时供用户保存，c 不改待审物）；不受下表「别人的资料夹」限制。
+a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定归 a。用不上的面具不建资料夹；需要时再建。启用 kis 时，项目共用元素表在 `kis.md`（或本项目等价表：{路径}），由 a、启用 kis 且有写权限的 s／e／d，或单用 kis 且有写权限的执行者维护（c 或受写权限限制时只读查表，新条目在回复中给出，有 a 时交 a 记入、单用时供用户保存，c 不改待审物）；项目设有核心知识库 `kb/`（或 `lit_kb/`）时，由 a 与 d 共同维护（见 persona-masks 包 `references/kb.md`）；均不受下表「别人的资料夹」限制。
 
 ## 1. 实例与单元
 
@@ -31,8 +31,8 @@ a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定�
 
 | | 建筑师 | 批判者 | 工程师 | 思索者 | 数据家 |
 |---|---|---|---|---|---|
-| 预设读 | `architect/MEMORY.md`、{规划文件} | `critic.md`、`critic/MEMORY.md`、待审物与依据 | 任务书、{项目指令档}、`engineer/MEMORY.md` | `spark/MEMORY.md`、`options.md` | `collector/MEMORY.md`、`data_collected.md` |
-| 不能写 | {由 e 实施的内容}、别人的资料夹里记忆以外的文件（`spark/options.md` 与 `spark/options/` 除外） | 待审物、别人的资料夹、`kis.md` | 别人的资料夹、{规划文件}（`architect/backlogs.md` 的条目与状态除外） | 别人的资料夹、实施 | 别人的资料夹、自己资料夹以外的文件（获授权的资料记录文件与启用 kis 时的 `kis.md` 除外） |
+| 预设读 | `architect/MEMORY.md`、{规划文件}、`kb/themes/*.md`（或 `lit_kb/themes/*.md`，若有） | `critic.md`、`critic/MEMORY.md`、待审物与依据 | 任务书、{项目指令档}、`engineer/MEMORY.md` | `spark/MEMORY.md`、`options.md`、`kb/themes/*.md`（或 `lit_kb/themes/*.md`，若有） | `collector/MEMORY.md`、`data_collected.md`、`kb/themes/*.md`（或 `lit_kb/themes/*.md`，若有） |
+| 不能写 | {由 e 实施的内容}、别人的资料夹里记忆以外的文件（`spark/options.md`、`spark/options/` 与项目 `kb/` 或 `lit_kb/` 除外） | 待审物、别人的资料夹、`kis.md`、`kb/`（或 `lit_kb/`） | 别人的资料夹、{规划文件}（`architect/backlogs.md` 的条目与状态除外） | 别人的资料夹、实施 | 别人的资料夹、自己资料夹以外的文件（获授权的资料记录文件、项目 `kb/` 或 `lit_kb/` 与启用 kis 时的 `kis.md` 除外） |
 
 **谁的资料夹谁写**。跨面具传话写在自己的资料夹或任务书里，让对方来读。
 
