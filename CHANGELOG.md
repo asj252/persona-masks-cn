@@ -1,10 +1,12 @@
 # 变更记录
 
-## 未发布
+## 0.8.2
 
 ### persona-masks
 
 - 新增共用模块与项目层组件 `kb`（项目核心知识库，`references/kb.md` 与 `templates/kb-PROTOCOL.md`、`kb-theme.md`、`kb-card-external.md`、`kb-card-internal.md`）：支持 `a$kb:`、`d$kb:`、`s$kb:`、`kb:` 或自然语言调用，项目存在 `kb/` 或 `lit_kb/` 时默认执行 Index-First（先读围绕本项目 2–5 个核心工作线／问题／模块建立的 Tier 2 `themes/*.md` 路由表，按需展开 Tier 3）；确立「外部核心基准（Top 10%–20%）+ 本项目内部自产知识点（`type: internal_finding`, `stance: our_finding`，档名 `internal_{slug}.md`，含已验证正结论与被实测证伪的死胡同）」双源沉淀、`_archive/` 冷宫封存与 4 类项目（科研实证、软件/AI 系统工程、数据竞赛、专书写作）字段映射；规定 `a` 与 `d` 均可写 `kb/`，并在 `brief-workflow` 习惯包 `roles.work-cycle` 加入文献查询与自主运行收尾的双源沉淀钩子。
+- `s`（思索者）第一阶段输出格式重构与统一首行角色标签（依 `#connecting-dots/dnli-api` 1,500 单位 `1+4` VS 格式与权重约束消融 + Token Logprobs 熵实证）：将 `s` 第一阶段（初探／轻量点子／战术方案）输出由严格纯 JSON（`V3`）改为 `V1` 管线分隔行格式（`Candidate k: [类型] 一句话概括核心直觉（可含 t） | Weight: 0.xx`，保留 `Weight` 为 `0–1` 相对典型度估算且显式不要求加总为 1，下游按「取末组（Last-Block Extraction）」锁定最后一个 `Candidate 1:` 至结尾的连续区块解析并在需要归一化时按正权重和算 $\tilde{w}_k = W_k / \sum W_j$），允许在候选行前写 1–2 句问题空间切分，并移除 `SKILL.md` 中 `s` 第一阶段豁免首行标签与直接入口提示行的特例条款，让所有主角色（`s/a/e/c/d`）统一遵守首行 `〔角色#实例/问题〕` 规范。
+- 安装与升级新增「提问附 `0–15` 偏好度（`〔偏好度 X/15〕`）」配置询问与规则细则（`INSTALL.md`、`references/roles.md`、`references/state-and-log.md`）：首次安装或版本升级时询问用户选择「修改全局设定（写入 `PROFILE.md` 的 `question.preference_0_15 = 已采用` 并按用户确认同步宿主全局指令文件）」「仅修改当前项目设定（写入项目所有面具共读的 `personas/README.md` 或项目根指令档 `AGENTS.md` / `CLAUDE.md`）」或「暂不启用」；启用后无论调用交互式选择题工具（每个 `options` 选项末尾附 `〔偏好度 X/15〕`，最推荐项保留首项 `(Recommended)` 前缀）还是正文直接提问，一律附上 `0–15` 偏好度评分；盲法守门场景下用户本人担任盲测评分者时唯一豁免。
 
 ## 0.8.1
 
