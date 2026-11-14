@@ -1,3 +1,11 @@
+---
+type: critic_shapes
+project: "{项目名}"
+instance: "#all"
+shape_count: 1
+updated: "YYYY-MM-DD"
+---
+
 # 反复出现的错误形状
 
 <!-- 模板：复制为 `personas/critic/shapes.md`；删除本注释。 -->

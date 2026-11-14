@@ -1,3 +1,10 @@
+---
+type: project_kis_table
+project: "{项目名}"
+instance: "#all"
+updated: "YYYY-MM-DD"
+---
+
 # kis 项目元素表
 
 <!-- 模板：经用户同意后复制为 `personas/kis.md`；已有等价表时在项目 README 指向它，不重复建立。删除本注释。 -->

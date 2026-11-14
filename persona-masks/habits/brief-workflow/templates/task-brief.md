@@ -1,3 +1,15 @@
+---
+type: task_brief
+project: "{项目名}"
+instance: "#Demo"
+task_id: "T{编号}"
+task_type: "code"                   # carry（搬运）| code（代码）
+status: "drafting"                  # drafting | reviewing | authorized | running | done | merged
+c_verdict: "pending"                # pending | blocking | approved | skipped_by_user
+target_branch: "t{编号}-e"
+updated: "YYYY-MM-DD"
+---
+
 # T{编号} {标题}
 
 <!-- 起草说明（交付前删除本注释）：
@@ -47,7 +59,7 @@
 ## 6. 交付物
 | 文件 | 说明 |
 |---|---|
-| {改动的文件；允许 e 更新的 `backlogs.md` 也列在这里} | |
+| {改动的文件；允许 e 更新的 `task.md` Backlog 节（或兼容旧 `backlogs.md`）也列在这里} | |
 | `tasks/T{编号}/` | 检查脚本，入库以便复现 |
 | 本文件末尾的「e 回报」 | 按 §8 |
 

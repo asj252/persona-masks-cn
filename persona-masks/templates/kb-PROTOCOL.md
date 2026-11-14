@@ -1,3 +1,10 @@
+---
+type: kb_protocol
+project: "{项目名}"
+instance: "#all"
+updated: "YYYY-MM-DD"
+---
+
 # 项目核心知识库规范（Tier 2 & Tier 3 Specification）
 
 <!-- 模板：复制为项目的 `kb/PROTOCOL.md`（或 `lit_kb/PROTOCOL.md`，由 a 与 d 共同维护）。按本项目类型调整后删除本注释。 -->

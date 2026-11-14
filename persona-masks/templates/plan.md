@@ -1,6 +1,17 @@
-# 计划
+---
+type: legacy_project_plan
+project: "{项目名}"
+instance: "#Demo"
+plan_id: "P-Demo-1"
+status: "active"
+legacy_compat: true
+replaced_by: "implementation_plan.md + task.md"
+updated: "YYYY-MM-DD"
+---
 
-<!-- 模板：复制为子项目资料夹的 `<子目录>/PLAN.md`（默认法定进度源），或无子目录的单目录项目按需建立的 `personas/architect/plan.md`（由 a 维护）。删除本注释。 -->
+# 计划（`0.8.x` 旧项目兼容模板）
+
+<!-- 兼容说明：0.9.0 起新开项目或新工作线改用 `implementation_plan.md` 与 `task.md`；已采用 `PLAN.md`／`plan.md` 的 0.8.x 旧项目延续使用本模板，不强制自动改名。复制为 `<子目录>/PLAN.md` 或 `personas/architect/plan.md`（由 a 维护）。删除本注释。 -->
 
 本档是『战役』层，a 的计划树（或单目录项目的计划森林）：为全局 `outline.md` 指针表里某一条工作线／战役写步骤并记日常进度。多子项目默认在各子项目资料夹自建 `<子目录>/PLAN.md` 作为法定进度源，全局 `personas/architect/outline.md` 只留一行带「最后更新」日期的指针，不另建全局现行 `plan.md`（无子目录的单目录项目未另指定进度源时，按需建 `personas/architect/plan.md` 作为法定进度源；若另指定了其他进度源，本档节点改写指向进度源对应条目的链接，见 persona-masks 包 references/project-memory.md）。完结或久未更新归档的树看 `personas/architect/plan_history.md`。节点标状态：进行中／搁置／成功／失败／被取代，只写步骤级结论与关键读数，不把单次实验的种子、命令行输出或断点日志塞进节点。子节点完结只改状态，不迁出；一棵树的根完结（成功、失败或被取代），或太久没更新（如两个月）经询问用户同意归档为「搁置」后，整棵树连同最终状态一起迁出到 `plan_history.md`，并从全局 `outline.md` 活动指针表移出。多实验或公开预注册项目中，承载日常步骤树与跨实验排期的活体进度源不得纳入单实验 `freeze.json` 或公开预注册离线校验器（`verify_prereg.py`）的 SHA-256 绑定白名单，各实验须独立抽出自包含冻结规范（如 `exp1-en/PLAN-E1.md` → `PLAN-E1.frozen.md`、`exp2-zh/PLAN-E2.md`）；若顶层总纲 `PLAN.md` 早期已被绑入单实验预注册哈希，则就地封存该 `PLAN.md`，改以 `PROGRESS.md` 为法定进度源（在头部注明「总纲 `PLAN.md` 受预注册哈希保护，不直接改写」），日常步骤树与后续实验细化设计分流至 `PROGRESS.md` 与各实验独立计划档。
 

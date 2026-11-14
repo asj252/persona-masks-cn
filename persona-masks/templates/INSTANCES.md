@@ -1,3 +1,10 @@
+---
+type: instances_registry
+project: "{项目名}"
+instance: "#all"
+updated: "YYYY-MM-DD"
+---
+
 # 实例与单元登记
 
 <!-- 模板：复制为 `personas/INSTANCES.md`；删除本注释。 -->

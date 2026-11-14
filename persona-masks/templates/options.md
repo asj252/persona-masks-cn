@@ -1,3 +1,11 @@
+---
+type: options_index
+project: "{项目名}"
+instance: "#all"
+question_count: 0
+updated: "YYYY-MM-DD"
+---
+
 # 选项（目录）
 
 <!-- 模板：复制为 `personas/spark/options.md`（s 与 a 都可写）。删除本注释。 -->

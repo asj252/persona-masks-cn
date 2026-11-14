@@ -1,3 +1,13 @@
+---
+type: critic_log
+project: "{项目名}"
+instance: "#Demo"
+total_reviews: 0
+blocking_catches: 0
+verdict_or_status: "active"
+updated: "YYYY-MM-DD"
+---
+
 # 送审记录
 
 <!-- 模板：复制为 `personas/critic/log.md`；删除本注释。 -->

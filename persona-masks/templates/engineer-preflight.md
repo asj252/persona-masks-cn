@@ -1,3 +1,10 @@
+---
+type: engineer_preflight
+project: "{项目名}"
+instance: "#all"
+updated: "YYYY-MM-DD"
+---
+
 # 按情境的开工检查表
 
 <!-- 模板：复制为 `personas/engineer/preflight.md`；删除本注释。 -->

@@ -1,5 +1,14 @@
 # 变更记录
 
+## 0.9.0
+
+### persona-masks
+
+- 新增全局主角色 `p`（幕僚长 / Principal）与作用域分层默认入口（`SKILL.md`、`references/roles.md`、`templates/principal-*`）：在全局工作区、跨专案控制中心或对接个人科研助理 WebApp 时默认入口为 `p`，单专案仓库内默认仍为 `a`。`p` 默认只输出艾森豪威尔四象限与待用户拍板事项（DDL 临近与配额即将重置自动推高权重，最终拍板权归用户），推荐使用沟通顺畅的 Gemini 系模型家族承载但不写死具体版本号；执行「100 字以内明确主张 ＋ 支撑证据 ＋ 1 个亮点描述性性质（或负向证伪 ＋ 死胡同卡）」科研认知闭环门禁（纯基建例外须声明），对未达闭环而停工的专案 `a` 经 Inbox／SSH 自动督促上限 5 轮、满轮熔断上报；在任务书边界配合 `principal/resources.yaml` 与轻量闭集路由评估（如 Gemini Decision 类）做模型与配额寻优；不拟定专案计划、不写业务任务书、不改业务代码。
+- 新增共用只读／统计实例 `e#ops` 与 `c` 借用条款（`references/roles.md`、`templates/critic.md`、`habits/brief-workflow/HABIT.md`）：专供 `p` 盘点父子 session 墙钟耗时、计费 Token、KV Cache 命中率、算力水位与抽提各仓 YAML 喂给 WebApp；严禁修改任何专案的业务代码、实验数据与文稿；豁免 `brief-workflow` 前置 `c` 审查（须做最小真实冒烟）；并向各专案 `c` 开放借用编写只读量测／重算脚本。
+- 新增 `p` 全局追踪四份模板（`templates/principal-quadrants.md`、`principal-dispatches.md`、`principal-resources.yaml`、`principal-telemetry.jsonl`）并在 `state-and-log.md` 登记按需设立规矩；仓内质量扫描规则新增 `.jsonl` 扩展名支持。
+- 重构项目层规划工件对齐 Antigravity `/plan` 并补齐全员 YAML Frontmatter（`references/project-memory.md`、`references/roles.md`、`references/loops.md`、`references/web.md`、`templates/*`、`habits/brief-workflow/templates/task-brief.md`、`INSTALL.md`）：瘦身 `outline.md`（去除工作线指针表与甘特排程，仅留静态总目标、代号表、决定与判据阈值）；新增 `implementation_plan.md`（设计契约＋`budget_envelope`）、`task.md`（复选框步骤树＋底部 `## Backlog`＋内生状态与闭环 YAML 头；跨专案四象限、`quota_boost` 与 `p_push_round` 归全局 `principal/`）与 `critic-review.md`；兼容保留并标注 `plan.md` 与 `backlogs.md`（`0.8.x` 旧项目不强制自动改名）；为全部核心工件与项目层模板补齐 `snake_case` YAML frontmatter。
+
 ## 0.8.2
 
 ### persona-masks

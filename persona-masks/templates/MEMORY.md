@@ -1,3 +1,11 @@
+---
+type: persona_memory_index
+project: "{项目名}"
+role: "{a|c|e|s|d}"
+instance: "#all"
+updated: "YYYY-MM-DD"
+---
+
 # {面具} 的记忆索引
 
 <!-- 模板：复制为 `personas/<面具>/MEMORY.md`；删除本注释。 -->

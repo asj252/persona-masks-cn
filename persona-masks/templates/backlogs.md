@@ -1,6 +1,15 @@
-# 待办
+---
+type: legacy_project_backlogs
+project: "{项目名}"
+instance: "#all"
+legacy_compat: true
+replaced_by: "task.md#backlog"
+updated: "YYYY-MM-DD"
+---
 
-<!-- 模板：复制为 `personas/architect/backlogs.md`（a 维护，e 也可更新条目与状态）；项目已有等价的待办文档时不另建，在 `personas/README.md` 指向它。删除本注释。 -->
+# 待办（`0.8.x` 旧项目兼容模板）
+
+<!-- 兼容说明：0.9.0 起新开项目统一将 Backlog 收容在 `task.md` 底部的 `## Backlog` 节；已采用独立 `backlogs.md` 的 0.8.x 旧项目延续使用本模板（a 维护，e 也可更新条目与状态），不强制自动改名。删除本注释。 -->
 
 本档收那些现在不做、以后要做的事。a 维护；开工前先看这里，做完的划掉并注明日期与对应任务书，不删。
 

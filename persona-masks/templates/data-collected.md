@@ -1,3 +1,13 @@
+---
+type: data_collected
+project: "{项目名}"
+instance: "#Demo"
+task_id: null
+entry_count: 0
+verdict_or_status: "active"
+updated: "YYYY-MM-DD"
+---
+
 # 资料
 
 <!-- 模板：复制为 `personas/collector/data_collected.md`（文件名带下划线，由 d 维护）。删除本注释。 -->

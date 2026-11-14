@@ -1,0 +1,24 @@
+schema_version: "0.9.0"
+updated: "YYYY-MM-DD"
+role_preferences:
+  p:
+    family_recommendation: "Gemini 系沟通顺畅、低工作流黑话模型家族"
+    configured_model: "" # 由用户自行填写，本包不预设带版本号型号
+  brief_router:
+    family_recommendation: "Gemini Decision 类轻量闭集评估"
+    configured_model: "" # 由用户自行填写
+compute_hosts:
+  - id: "workstation-primary"
+    transport: "ssh"
+    status: "online"
+    notes: "主力工作站（由用户按实际机器维护）"
+subscription_windows:
+  - provider: "codex-subscription"
+    reset_cadence: "rolling_5h_and_weekly"
+    next_reset_utc: "YYYY-MM-DDTHH:MM:SSZ"
+    remaining_pct: 100
+    boost_threshold_hours: 12
+api_quotas:
+  monthly_paid_cap_usd: 50.0
+  spent_usd_mtd: 0.0
+  allow_free_tier_overflow: true
