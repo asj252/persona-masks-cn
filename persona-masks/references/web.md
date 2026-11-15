@@ -3,8 +3,8 @@
 适用：在网页端（如 claude.ai 的对话或项目）使用本包。前提是那里没有本机文件系统，项目文件对助手（如 Claude）只读，skill 自己的文件也写不回去；实际行为与此不符时，按宿主当时能做到的说明，不假装。
 
 ## 保留与取消
-- **保留**：s、a、e、c、d 的角色规则；kis、smd 的讲解规则；循环 asd 与 s-a-d。这些规则在 `roles.md`、`loops.md`、`kis.md`、`smd.md` 里，没有被带进网页端的，对应规则不可用，要说明。
-- **取消**：资料目录（PROFILE、LOG、`smd.md`）；项目层的 kis 元素表、`kb/`（或 `lit_kb/`）与 `personas/` 的其余文件；`wid`、`kb`；习惯包；派发到外部 cli。取消后 kis 不查表（凭当前对话选元素，仍先写公式），smd 照常设检查点但不存档。
+- **保留**：s、a、e、c、d 的角色规则；kis、smd 的讲解规则；循环 asd（含查重子模式）。这些规则在 `roles.md`、`loops.md`、`kis.md`、`smd.md` 里，没有被带进网页端的，对应规则不可用，要说明。
+- **取消**：资料目录（PROFILE、LOG、`smd.md`）；项目层的 kis 元素表、`kb/`（或 `lit_kb/`）与 `personas/` 的其余文件；`kb`（含别名 `wid` 与 `wid:` 快照）；按需装配脚本；习惯包；派发到外部 cli。取消后 kis 不查表（凭当前对话选元素，仍先写公式），smd 照常设检查点但不存档。
 - **只手动维护一份文件** `persona_brain.md`：在网页端把项目层的章程（`outline.md` 去进度化部分）、任务与待办（`implementation_plan.md`＋`task.md` 的步骤树与 `Backlog`，兼容 `0.8.x` 旧节结构）、`plan_history.md`、`options.md`、`data_collected.md` 合成同一份（不建全局 `principal/` 目录与 `e#ops` 脚本），格式与项目层模板保持对齐，不简化。
 - **a 与 s**：同一对话里「不告诉 s 倾向」和 a 读 `options.md` 的范围做不到，首次发生时说明一次，不伪装。
 - **c**：在同一对话里不是独立审查，不冒称；需要时请用户另开一个新对话，只贴产物与依据，让那个对话戴 c。

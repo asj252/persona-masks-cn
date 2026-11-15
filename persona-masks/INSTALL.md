@@ -1,7 +1,7 @@
-# Persona Masks 0.9.0 · 安装与试用
+# Persona Masks 0.10.0 · 安装与试用
 
-本包为试用中的文件型 skill；只有 Markdown 指令与可选 Codex UI 元数据，没有服务、数据库或后台监听器。
-包分三部分：**系统核心**（SKILL.md、references/、templates/，一定安装）；**习惯包**（habits/，逐包询问是否安装，装了才写进个人 PROFILE）；项目内容不在包内。
+本包为试用中的文件型 skill；只有 Markdown 指令、可选 Codex UI 元数据与一个可选的只读装配脚本（`scripts/load_mask_context.py`，Python 3 标准库），没有服务、数据库或后台监听器。
+包分三部分：**系统核心**（SKILL.md、references/、templates/、scripts/，一定安装）；**习惯包**（habits/，逐包询问是否安装，装了才写进个人 PROFILE）；项目内容不在包内。
 
 ## 安装位置
 将整个 persona-masks 文件夹复制到宿主的个人 skills 目录：
@@ -28,7 +28,7 @@ PROFILE.md、LOG.md、smd.md 是个人运行数据，不随包分发；首次使
    | `issue-requests` | 发现 skill 该改的地方时开在固定仓库的 issue；默认先问用户，开不了时有后备，合并后留言再关 | 宿主能执行 `gh` 或同等的 issue 接口并已登录；联网 |
 
 2. 问用户是否安装、装哪几个；不装的照包默认。
-3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.9.0`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
+3. 对选中的包，按 [习惯包](habits/README.md) 把规则写进资料目录的 PROFILE（来源栏标 `habits/<名称>@0.10.0`＋本次安装的 LOG 事件键），并记 LOG。包内另有前提的（如 `brief-workflow` 的资料目录须为 git 仓库），按该包说明处理。
 4. **提问附 `0–15` 偏好度配置询问（`question.preference_0_15`）**：在首次安装或版本升级的询问环节中，一并询问用户是否启用「所有提问一律附 `0–15` 偏好度评分（`〔偏好度 X/15〕`）」及其作用范围（三选一）：
    - **修改全局设定**：写入个人资料目录 `PROFILE.md` 的条目 `question.preference_0_15`（适用范围：`全局（所有项目），向用户提问时`；状态：`已采用`；来源栏标本次安装／升级的 LOG 事件键），并经用户确认后同步提示或写入宿主全局指令文件（如 `GEMINI.md`、`CLAUDE.md`、`AGENTS.md` 或常驻 skill 描述）；
    - **仅修改当前项目设定**：经用户确认后写入当前项目所有面具共读的 `personas/README.md` 或项目根目录指令档 `AGENTS.md` / `CLAUDE.md`；
@@ -36,6 +36,14 @@ PROFILE.md、LOG.md、smd.md 是个人运行数据，不随包分发；首次使
    - **规则细则**：启用后，Agent 向用户提出任何问题时，无论使用交互式选择题工具（每个 `options` 选项末尾均须附 `〔偏好度 X/15〕`，最推荐项同时保留首项 `(Recommended)` 前缀）还是在正文中直接提问（每个问题或候选方向旁附 `〔偏好度 X/15〕`），一律附上 Agent 自身评估的 `0–15` 偏好度（`15/15` 为强烈推荐，`0/15` 为强烈不建议）。**唯一豁免（盲法守门）**：当用户本人担任盲测／人工评测评分者（见 [角色](references/roles.md)「盲法守门」）时，待盲评的实验条目严禁附带偏好度或暗示性标签，以防污染盲测结果。
 
 升级说明按版本从新到旧排列，每一节只写该版本相对前一版本的变化；从更早的版本升级时，从对应的一节读起，向上依次读完每一节，各节里的迁移都要做。
+
+## 从 0.9.0 升级
+1. 更换 skill 文件（两处安装位置保持逐字相同），资料目录原样保留；`references/wid.md` 已删除，覆盖安装时一并删去旧文件，新增的 `scripts/` 一并复制。
+2. `wid` 并入 `kb`：`$wid` 现在等价于 `$kb`（如 `a$wid:` 按 kb 的 Index-First 与双源沉淀执行，不再写问答文件）；要把一则问答写成文件改用 `wid:` 前缀（kb 的单次问答快照，规则见 `references/kb.md` 第 4 节，仍只对本则生效、写完重读核对）。快照位置依次为：本次指定的路径、项目 `personas/README.md` 的「wid 默认目录」、项目已有 `kb/`（或 `lit_kb/`）时其下的 `snapshots/`，都没有就先问。已写的 wid 文件原地保留，不自动迁移。
+3. `s-a-d` 并入 `asd`：`references/loops.md` 收为一个由 a 主控的循环（a 定目标与判据 → s 构思与二阶段展开 → d 查资料或检索查重 → a 依据证据裁决并落地），s 的第二阶段展开移到 d 查资料之前。「用 s-a-d 循环」与论文／专利查重的说法仍然有效，开启其中的查重子模式（查重摘要经用户确认后才派 d，d 逐篇对照完整方案）。已有选项档案与查重记录不追改。
+4. `SKILL.md` 精简为路由索引表：入口与换角色的细则（直接入口提示行、不自动换角色、宿主做不到独立上下文时）移到 `references/roles.md`「分工的原则」，用户不满意时自动呼叫 s 以 a 段「呼叫 s」为准；规则本身没有变。
+5. 新增可选脚本 `scripts/load_mask_context.py`（Python 3.8 以上标准库；只读文件，不写文件、不联网）：传入前缀（如 `'a$wid#Demo/Q1'`、`p#global`）及 `--loop s-a-d`、`--cwd <项目目录>`、`--json`，解析别名（`wid`→`kb`、`t`→`smd`、`s-a-d`→`asd`）后只输出当次要读的规则段落与项目 `personas/<面具>/MEMORY.md` 等路径；`--selftest` 跑内置自检。宿主不能运行 Python 时照 `SKILL.md` 手动读，规则不依赖脚本。
+6. 习惯包本版没有变化，PROFILE 不需要改。
 
 ## 从 0.8.2 升级
 1. **新增全局主角色 `p`（幕僚长）与 `principal/` 全局追踪模板**：在全局工作区、跨专案控制中心或对接个人科研助理 WebApp 且未指定前缀时，默认入口改为 `p`（单专案仓库目录内默认入口仍为 `a`，可用 `p:` 显式唤起）。`p` 负责跨专案艾森豪威尔四象限汇总（Pull-on-Demand）、科研认知闭环门禁（Claim-Closure Gate：`<= 100` 字主张 ＋ 证据 ＋ 亮点性质，或负向证伪 ＋ 死胡同卡，5 轮自动反推与熔断），以及在任务书边界配合配额包络与轻量闭集评估（如 Gemini Decision 类）做模型与算力寻优；`p` 不拟定专案计划、不写业务任务书、不改业务代码。按需从 `templates/principal-*` 复制建立全局 `principal/quadrants.md`、`principal/dispatches.md`、`principal/resources.yaml` 与 `principal/telemetry.jsonl`（不自动建）。
@@ -137,10 +145,10 @@ PROFILE.md、LOG.md、smd.md 是个人运行数据，不随包分发；首次使
 项目层记忆不自动建立。用户要求，或 a 提出、用户同意后，把本包 `templates/` 中用得上的模板复制进项目的 `personas/`（对应关系见 [项目层](references/project-memory.md)），再按项目填写。建立后，戴面具时先读 `personas/<面具>/MEMORY.md`。
 
 ## 网页端
-网页端没有本机文件系统，只能精简使用（保留角色与两个循环，取消其余档案）：见 [网页端用法](references/web.md)（只手动维护合成一份的 `persona_brain.md`，格式与对应项目层模板相同，其余档案取消）。安装方式取决于宿主：支持上传 skill 的，把整个 persona-masks 文件夹打成 zip 上传；不支持的，把 `SKILL.md` 与 `references/` 下的各文件内容放进项目说明或项目文件；缺哪个文件，对应规则就不可用。界面与限制以宿主官方说明为准，本包未在网页端实测。
+网页端没有本机文件系统，只能精简使用（保留角色与循环 asd（含查重子模式），取消其余档案）：见 [网页端用法](references/web.md)（只手动维护合成一份的 `persona_brain.md`，格式与对应项目层模板相同，其余档案取消）。安装方式取决于宿主：支持上传 skill 的，把整个 persona-masks 文件夹打成 zip 上传；不支持的，把 `SKILL.md` 与 `references/` 下的各文件内容放进项目说明或项目文件；缺哪个文件，对应规则就不可用。界面与限制以宿主官方说明为准，本包未在网页端实测。
 
 ## 其他支持 Agent Skills 的宿主
-保留 SKILL.md、references、templates、habits 的相对布局，按宿主的 skills 安装位置放置；agents/openai.yaml 只供 Codex 使用。首次明确资料目录。是否支持文件持久化、子 agent 和美元式 skill 调用取决于宿主，不能仅凭文件兼容宣称已测试兼容。
+保留 SKILL.md、references、templates、habits、scripts 的相对布局，按宿主的 skills 安装位置放置；agents/openai.yaml 只供 Codex 使用。首次明确资料目录。是否支持文件持久化、子 agent 和美元式 skill 调用取决于宿主，不能仅凭文件兼容宣称已测试兼容。
 角色/模块前缀是本 skill 的文本约定，不是另行注册的宿主命令。
 
 ## 试用与调整

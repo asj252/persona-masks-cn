@@ -1,5 +1,13 @@
 # 变更记录
 
+## 0.10.0
+
+### persona-masks
+
+- `wid` 并入 `kb`：`$wid` 是 `$kb` 的别名；`wid:` 前缀保留为 kb 的单次问答快照（只对本则生效、写完重读核对；默认落在本次指定的路径、项目登记的 wid 默认目录或 `kb/snapshots/`，都没有就先问）。`references/wid.md` 并入 `references/kb.md` 第 4 节后删除。
+- `s-a-d` 并入 `asd`：`references/loops.md` 收为一个由 a 主控的循环（a 定目标与判据 → s 构思与二阶段展开 → d 查资料或检索查重 → a 依据证据裁决并落地）；「用 s-a-d 循环」与论文／专利查重的说法开启其中的查重子模式（查重摘要经用户确认后才派 d，d 逐篇对照完整方案）。
+- 渐进式披露：`SKILL.md` 精简为路由索引表，入口与换角色的细则移到 `references/roles.md`「分工的原则」；新增可选的只读脚本 `scripts/load_mask_context.py`（Python 3 标准库），按前缀解析别名（`wid`→`kb`、`t`→`smd`、`s-a-d`→`asd`），只输出当前主角色段、已启用模块、当次循环与项目记忆路径，附 `--json` 与 `--selftest`。
+
 ## 0.9.0
 
 ### persona-masks
