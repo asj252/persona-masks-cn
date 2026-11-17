@@ -18,9 +18,9 @@ updated: "YYYY-MM-DD"
 
 # Implementation Plan: P-Demo-1 {计划标题}
 
-<!-- 模板：复制为工作线目录 `<子目录>/implementation_plan.md` 或单目录项目 `personas/architect/implementation_plan.md`（由 a 维护）。对齐 Antigravity `/plan` 工件结构与五项框定。删除本注释。 -->
+<!-- 模板：复制为工作线目录 `<子目录>/implementation_plan.md` 或单目录项目 `personas/architect/implementation_plan.md`（由 a 维护）。可选采用 Antigravity `/plan` 工件结构；按实际问题填写，不要求每个栏目都有内容。删除本注释。 -->
 
-## 1. Goal & Framing（目标与五项框定）
+## 1. Goal & Framing（目标与主要条件）
 - **宏观问题与交付对象**：{项目要交出什么、谁来评判、在全局中的位置。}
 - **服务的决定**：{这项工作帮用户或研究定下哪一个明确取舍。}
 - **叫停或转向读数**：{看到什么具体定量或门禁失败就停下或转向。}
@@ -30,7 +30,7 @@ updated: "YYYY-MM-DD"
 
 ## 2. User Review Required（需人工拍板的红线）
 > [!IMPORTANT]
-> - 除超出预算包络（`budget_envelope`）或触发上述叫停读数外，获准按 `task.md` 连续推进至达成「100 字以内主张＋证据＋亮点性质（或证伪＋死胡同卡）」科研认知闭环。
+> - 按已获授权与预算推进；超出范围、触发停止条件或遇到高代价取舍时请用户确认。采用模板本身不授权执行、花费或续跑。
 
 ## 3. Proposed Changes（模块与文件变更契约）
 
@@ -44,5 +44,5 @@ updated: "YYYY-MM-DD"
 1. **负对照干跑**：{构造缺漏／越界／损坏样本运行检查脚本，断言全部判败。}
 2. **最小真实冒烟**：{先跑最小真实样本，核验关键字段、`cached_tokens` 缓存命中率与编码正常。}
 
-### Closure Deliverables（科研认知闭环交付标准）
-- 产出一句 `<= 100` 字明确主张（或负向证伪说明）、对应证据路径（SVG 图表须目视核验无截断重叠）、1 个具亮点描述性性质（正向闭环），并按需沉淀进 `kb/` 卡片。
+### Deliverables（结果与证据）
+- 说明结果、证据、限制及下一步；图表、样例、成稿句子或科研闭环字段按任务需要选择。

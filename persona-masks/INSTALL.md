@@ -1,3 +1,5 @@
+<!-- T034未发布调整：smd及旧t别名已删除，旧调用不再支持；不自动删除个人smd.md/t.md记录或撤销PROFILE已采用项。下文旧版本升级段落是历史记录，当前行为以本说明和SKILL.md为准。 -->
+
 # Persona Masks 0.10.0 · 安装与试用
 
 本包为试用中的文件型 skill；只有 Markdown 指令、可选 Codex UI 元数据与一个可选的只读装配脚本（`scripts/load_mask_context.py`，Python 3 标准库），没有服务、数据库或后台监听器。
@@ -9,11 +11,11 @@
 - Codex：`~/.agents/skills/persona-masks/`（Windows 为 %USERPROFILE%/.agents/skills/persona-masks/）
 
 两处都装时须逐字相同。已有同名目录时先核对版本与本地修改，不直接覆盖。不要在同一宿主的多个扫描目录重复安装同名包。
-在下一轮请求中用“使用 $persona-masks，a$kis$smd#Demo/Q1: …”。未显示时重启宿主。
+在下一轮请求中用“使用 $persona-masks，a$kis#Demo/Q1: …”。未显示时重启宿主。
 只安装 skill 不会自动修改任何项目的 AGENTS.md、CLAUDE.md，也不修改任何宿主的设置。
 
 资料目录默认是 $CODEX_HOME/persona-masks；未设置 CODEX_HOME 时为 ~/.codex/persona-masks。可在请求里明确指定另一目录。启用时确认实际路径。
-PROFILE.md、LOG.md、smd.md 是个人运行数据，不随包分发；首次使用按需建立。kis 元素表放在项目的 `personas/kis.md`，旧个人表保留，迁移见下文未发布说明。升级只更换 skill 文件，保留外部资料。删除包也不删除资料。
+PROFILE.md、LOG.md 是个人运行数据，不随包分发；首次使用按需建立。kis 元素表放在项目的 `personas/kis.md`，旧个人表保留，迁移见下文未发布说明。升级只更换 skill 文件，保留外部资料。删除包也不删除资料。
 安装或升级时（有 agent 协助时），建议用户一次：建一个跨项目的工具心得目录（按工具分资料夹，记踩过的坑与做法；用哪个工具或 cli 派发 c、d 这类个人偏好也可写在那里），并在 PROFILE 加一条指针，让各面具用某个工具之前先读对应的资料夹。用户不要就不再提；本包不建这个目录，也不规定它的格式。
 
 ## 习惯包：安装时询问
@@ -22,7 +24,7 @@ PROFILE.md、LOG.md、smd.md 是个人运行数据，不随包分发；首次使
 
    | 包 | 一句话 | 依赖 |
    |---|---|---|
-   | `module-tweaks` | smd 的行数限制只管终端命令；kis 只对启用的那一则生效 | 无 |
+   | `module-tweaks` | kis只对启用的那一则生效 | 无 |
    | `brief-workflow` | a 写任务书、c 独立审查、e 默认由 a 以子 agent 派出实施（可另开 session）、c 查验、a 判定（含无原稿时先写大纲、终审与回顾） | 宿主的子 agent 与独立 worktree（另开 session 时需要跨 session 消息、任务芯片）、session 改名等；资料目录为 git 仓库 |
    | `craft` | 验收标准写得出检查脚本；统计推断先定分析单位；预先验算；起草前对照错误形状自查；另有八条（声明范围、替换句字数、替换表、未舍入的差值、c 的替换句预检、判定格子表、数字出处、实验冷冻哈希隔离） | 无 |
    | `issue-requests` | 发现 skill 该改的地方时开在固定仓库的 issue；默认先问用户，开不了时有后备，合并后留言再关 | 宿主能执行 `gh` 或同等的 issue 接口并已登录；联网 |
@@ -42,7 +44,7 @@ PROFILE.md、LOG.md、smd.md 是个人运行数据，不随包分发；首次使
 2. `wid` 并入 `kb`：`$wid` 现在等价于 `$kb`（如 `a$wid:` 按 kb 的 Index-First 与双源沉淀执行，不再写问答文件）；要把一则问答写成文件改用 `wid:` 前缀（kb 的单次问答快照，规则见 `references/kb.md` 第 4 节，仍只对本则生效、写完重读核对）。快照位置依次为：本次指定的路径、项目 `personas/README.md` 的「wid 默认目录」、项目已有 `kb/`（或 `lit_kb/`）时其下的 `snapshots/`，都没有就先问。已写的 wid 文件原地保留，不自动迁移。
 3. `s-a-d` 并入 `asd`：`references/loops.md` 收为一个由 a 主控的循环（a 定目标与判据 → s 构思与二阶段展开 → d 查资料或检索查重 → a 依据证据裁决并落地），s 的第二阶段展开移到 d 查资料之前。「用 s-a-d 循环」与论文／专利查重的说法仍然有效，开启其中的查重子模式（查重摘要经用户确认后才派 d，d 逐篇对照完整方案）。已有选项档案与查重记录不追改。
 4. `SKILL.md` 精简为路由索引表：入口与换角色的细则（直接入口提示行、不自动换角色、宿主做不到独立上下文时）移到 `references/roles.md`「分工的原则」，用户不满意时自动呼叫 s 以 a 段「呼叫 s」为准；规则本身没有变。
-5. 新增可选脚本 `scripts/load_mask_context.py`（Python 3.8 以上标准库；只读文件，不写文件、不联网）：传入前缀（如 `'a$wid#Demo/Q1'`、`p#global`）及 `--loop s-a-d`、`--cwd <项目目录>`、`--json`，解析别名（`wid`→`kb`、`t`→`smd`、`s-a-d`→`asd`）后只输出当次要读的规则段落与项目 `personas/<面具>/MEMORY.md` 等路径；`--selftest` 跑内置自检。宿主不能运行 Python 时照 `SKILL.md` 手动读，规则不依赖脚本。
+5. 新增可选脚本 `scripts/load_mask_context.py`（Python 3.8 以上标准库；只读文件，不写文件、不联网）：传入前缀（如 `'a$wid#Demo/Q1'`、`p#global`）及 `--loop s-a-d`、`--cwd <项目目录>`、`--json`，解析别名（`wid`→`kb`、`s-a-d`→`asd`）后只输出当次要读的规则段落与项目 `personas/<面具>/MEMORY.md` 等路径；`--selftest` 跑内置自检。宿主不能运行 Python 时照 `SKILL.md` 手动读，规则不依赖脚本。
 6. 习惯包本版没有变化，PROFILE 不需要改。
 
 ## 从 0.8.2 升级
@@ -152,7 +154,7 @@ PROFILE.md、LOG.md、smd.md 是个人运行数据，不随包分发；首次使
 角色/模块前缀是本 skill 的文本约定，不是另行注册的宿主命令。
 
 ## 试用与调整
-例如：“人格面具系统调整：本项目 smd 每次只给一步，其他项目维持完整步骤。”
+例如：“人格面具系统调整：本项目kis仅本次启用，其他模块维持原约定。”
 skill 应记录 LOG，并仅在实际授权的范围更新 PROFILE。普通任务不写流水账。尚未采纳的想法与已经改动的规则分开。
 不要将个人 LOG/表格/PROFILE 一起打包。此版尚未证明比普通提示更有效，也不提供强制路由或自动日志监听。
 

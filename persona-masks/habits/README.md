@@ -5,7 +5,7 @@
 
 | 包 | 一句话 | 依赖 |
 |---|---|---|
-| [`module-tweaks`](module-tweaks/HABIT.md) | smd 的行数限制只管终端命令；kis 只对启用的那一则生效 | 无 |
+| [`module-tweaks`](module-tweaks/HABIT.md) | kis只对启用的那一则生效 | 无 |
 | [`brief-workflow`](brief-workflow/HABIT.md) | a 写任务书、c 独立审查、e 默认由 a 以子 agent 派出实施（可另开 session）、c 查验、a 判定的完整工作循环（含无原稿时先写大纲、终审与回顾，以及用户限期授权的无人值守） | 宿主的子 agent 与独立 worktree（另开 session 时需要跨 session 消息、任务芯片）、session 改名等；资料目录为 git 仓库 |
 | [`craft`](craft/HABIT.md) | 验收标准写得出检查脚本；统计推断先定分析单位；预先验算；起草前对照错误形状自查；另有八条（声明范围、替换句字数、替换表、未舍入的差值、c 的替换句预检、判定格子表、数字出处、实验冷冻哈希隔离） | 无 |
 | [`issue-requests`](issue-requests/HABIT.md) | 发现 skill 该改的地方时开在固定仓库的 issue；默认先问用户，开不了时有后备，合并后留言再关 | 宿主能执行 `gh` 或同等的 issue 接口并已登录；联网 |

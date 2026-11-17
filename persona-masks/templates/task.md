@@ -6,10 +6,10 @@ active_plan_id: "P-Demo-1"            # 跨同实例独立递增的计划树号
 deadline: null                        # 硬 DDL（YYYY-MM-DD）；无则填 null
 status: "in_progress"                 # in_progress | blocked | paused | completed
 closure:
-  state: "open"                       # open | claim_verified | falsified | infra_exempt
-  claim_100c: null                    # 闭环时必填：<=100 字明确主张（或为何原主张错误的证伪说明）
-  evidence_ref: null                  # 闭环时必填：支撑证据或反面实测路径（如报告图或 kb 卡）
-  salient_property: null              # 正向闭环必填：1 个具亮点的描述性性质；负向证伪或基建豁免填 null
+  state: "open"                       # 可选科研追踪：open | claim_verified | falsified | infra_exempt
+  claim_100c: null                    # 项目采用科研闭环时填写，未采用保留null
+  evidence_ref: null                  # 可选证据路径；实际结论仍需依据
+  salient_property: null              # 可选描述，未采用保留null
 frozen_guard: null                    # 单实验冻结哈希隔离保护声明（如 PLAN-E1.frozen.md）；无则填 null
 updated: "YYYY-MM-DD"
 ---

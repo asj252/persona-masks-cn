@@ -31,7 +31,7 @@ a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定�
 
 ## 2. 本项目采用的做法
 
-<!-- 从 persona-masks 的 references/project-memory.md「项目可采用的做法」中选；不选就删除本节。 -->
+<!-- 从 persona-masks 的 references/project-memory-workflows.md 的 review「项目可采用的做法」中选；不选就删除本节。 -->
 - {例：一个单元一个持续的 c（见 `critic.md`）}
 
 ## 3. 读与写
@@ -40,7 +40,7 @@ a 与 c 按态度切分：对别人产物的独立检查归 c，决定与判定�
 
 | | 建筑师 | 批判者 | 工程师 | 思索者 | 数据家 |
 |---|---|---|---|---|---|
-| 预设读 | `architect/MEMORY.md`、{规划文件}、`kb/themes/*.md`（或 `lit_kb/themes/*.md`，若有） | `critic.md`、`critic/MEMORY.md`、待审物与依据 | 任务书、{项目指令档}、`engineer/MEMORY.md` | `spark/MEMORY.md`、`options.md`、`kb/themes/*.md`（或 `lit_kb/themes/*.md`，若有） | `collector/MEMORY.md`、`data_collected.md`、`kb/themes/*.md`（或 `lit_kb/themes/*.md`，若有） |
+| 预设读 | `architect/MEMORY.md`、{规划文件}、库根 `kb/README.md`（或 `lit_kb/README.md`，接受已有小写入口）→相关主题（若有） | `critic.md`、`critic/MEMORY.md`、待审物与依据 | 任务书、{项目指令档}、`engineer/MEMORY.md` | `spark/MEMORY.md`、`options.md`、库根 `kb/README.md`（或 `lit_kb/README.md`，接受已有小写入口）→相关主题（若有） | `collector/MEMORY.md`、`data_collected.md`、库根 `kb/README.md`（或 `lit_kb/README.md`，接受已有小写入口）→相关主题（若有） |
 | 不能写 | {由 e 实施的内容}、别人的资料夹里记忆以外的文件（`spark/options.md`、`spark/options/` 与项目 `kb/` 或 `lit_kb/` 除外） | 待审物、别人的资料夹、`kis.md`、`kb/`（或 `lit_kb/`） | 别人的资料夹、{规划文件}（`task.md` 底部 `## Backlog` 或兼容旧 `architect/backlogs.md` 的条目与状态除外；`e#ops` 严禁写任何专案文件） | 别人的资料夹、实施 | 别人的资料夹、自己资料夹以外的文件（获授权的资料记录文件、项目 `kb/` 或 `lit_kb/` 与启用 kis 时的 `kis.md` 除外） |
 
 **谁的资料夹谁写**。跨面具传话写在自己的资料夹或任务书里，让对方来读。

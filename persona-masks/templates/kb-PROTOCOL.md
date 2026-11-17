@@ -21,6 +21,7 @@ updated: "YYYY-MM-DD"
 
 目录层级（缩进列表）：
 - `kb/`（或 `lit_kb/`）
+  - `README.md`（已有小写 `readme.md` 同样接受）：问题／工作线到相关主题的索引，从 `kb-README.md` 复制
   - `PROTOCOL.md`：本规范
   - `themes/`（Tier 2）：围绕本项目核心工作线／模块的路由表
     - `{theme_slug}.md`
@@ -31,5 +32,5 @@ updated: "YYYY-MM-DD"
 
 ## 2. 检索与写入守则
 
-1. **开工先读 Tier 2（Read-First）**：`a` 规划方案、`d` 查资料、`s` 构思方向前，先读 `themes/*.md`；仅当需核对具体数值、参数、提示模板或原文引句时，才按需展开 Tier 3 卡片。跨主题过滤可用 `rg "stance: our_finding"`、`rg "status: verified"`。
-2. **收尾双源沉淀（Write-Back）**：每完成一轮外部文献调研、实验分析或阶段性自主运行，`a` 或 `d` 必须将新获悉的外部核心依据与**本项目新产生的内部知识点（含正负向结论）**增量写入 `themes/*.md` 与 `cards/*.md`（或 `papers/*.md`），并保持 Tier 2 矩阵与 Tier 3 卡片双向同步。
+1. **README 优先（Read-First）**：启用 kb（含 `a`、`d`、`s` 默认联动）时，先读库根 `README.md`（其次已有 `readme.md`），按当前问题选择相关 `themes/<主题>.md`，默认不全读主题正文；缺索引只列主题文件名／标题再选择，不因只读查询建档；未命中路由时局部检索选择，跨主题比较才读多个相关主题；仅当需核对具体数值、参数、提示模板或原文引句时，才按需展开 Tier 3 卡片。跨主题过滤可用 `rg "stance: our_finding"`、`rg "status: verified"`。
+2. **收尾双源沉淀（Write-Back）**：每完成一轮外部文献调研、实验分析或阶段性自主运行，`a` 或 `d` 必须将新获悉的外部核心依据与**本项目新产生的内部知识点（含正负向结论）**增量写入 `themes/*.md` 与 `cards/*.md`（或 `papers/*.md`），并保持 Tier 2 矩阵与 Tier 3 卡片双向同步。新增／改名／删除主题路由时同步 README；只改卡片不强制重写索引。README 只放路由，不复制正文、卡片或历史账本。

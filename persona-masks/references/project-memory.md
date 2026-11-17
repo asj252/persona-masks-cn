@@ -1,68 +1,51 @@
 # 项目层：项目仓库里的 `personas/`
 
 ## 定位
-- **个人／全局层**（资料目录）：跨项目的个人规则、学习记录（PROFILE、LOG、smd）与启用全局幕僚长 `p` 时的全局控制中心追踪目录 `principal/`（四象限、在途派发、算力资源包络、耗费流水账），见 [资料与日志](state-and-log.md)。kis 元素表放在项目层。
+- **个人／全局层**（资料目录）：跨项目的个人规则与调整记录（PROFILE、LOG）与启用全局幕僚长 `p` 时的全局控制中心追踪目录 `principal/`（四象限、在途派发、算力资源包络、耗费流水账），见 [资料与日志](state-and-log.md)。kis 元素表放在项目层。
 - **项目层**（项目仓库的 `personas/`）：各面具在该项目的规矩与经验，随仓库版控，本地与云端 session、子 agent 都读得到；核心工件模板自 `0.9.0` 起统一附带 `snake_case` YAML frontmatter 供 `e#ops` 零 Token 提取。
 - 冲突时项目层优先，但受 [角色](roles.md) 中 c 的下限约束，也不能扩大宿主或项目既有的权限。
 - 没有 `personas/` 的项目照个人 PROFILE 与包默认；本文件其余部分除项目根目录的 `kb/`（或 `lit_kb/`，见 [kb](kb.md)，无 `personas/` 或单用 `kb` 模块时同样适用）外，只在项目有 `personas/` 时适用。
 
-## 何时建立
-不自动建立。由用户要求，或 a 提出、用户同意后，把本包 `templates/` 中需要的模板复制进项目，只建用得上的面具资料夹。
-模板对应（全部 Markdown 模板均含 `snake_case` YAML frontmatter）：`personas-README.md` → `personas/README.md`；`INSTANCES.md`；`kis.md` → `personas/kis.md`（启用 kis 时用的项目共用元素表）；`outline.md` → `personas/architect/outline.md`（静态总目标、代号表、决定与阈值）；`implementation_plan.md` → 子项目的 `<子目录>/implementation_plan.md`（或 `personas/architect/implementation_plan.md`，对齐 Antigravity `/plan` 设计契约与 `budget_envelope`）；`task.md` → 子项目的 `<子目录>/task.md`（或 `personas/architect/task.md`，法定进度源：合并步骤树与 `## Backlog`，YAML 头含硬 DDL、状态与认知闭环字段，跨专案四象限归全局 `principal/quadrants.md`）；兼容旧模板 `plan.md`（`<子目录>/PLAN.md` 或 `plan.md`）与 `backlogs.md`（`personas/architect/backlogs.md`，供 `0.8.x` 旧项目沿用，不强制改名）；`plan-history.md` → `personas/architect/plan_history.md`；`options.md` → `personas/spark/options.md`；`option-file.md` → `personas/spark/options/<YYYY-MM-DD>-<短名>.md`（一个问题一份）；`handoff.md` → 项目的交接文件（位置由项目定，如根目录的 `HANDOFF.md`）；`data-collected.md` → `personas/collector/data_collected.md`；`kb-PROTOCOL.md` → `kb/PROTOCOL.md`（或 `lit_kb/PROTOCOL.md`）；`kb-theme.md` → `kb/themes/<主题>.md`（Tier 2 路由表）；`kb-card-external.md` → `kb/cards/<id>.md`（或 `lit_kb/papers/<citekey>.md`，Tier 3 外部基准卡）；`kb-card-internal.md` → `kb/cards/internal_<slug>.md`（或 `lit_kb/papers/internal_<slug>.md`，Tier 3 内部知识点卡）；`MEMORY.md` → `personas/<面具>/MEMORY.md`；`critic.md`；`critic-shapes.md` → `personas/critic/shapes.md`；`critic-log.md` → `personas/critic/log.md`；`critic-review.md` → `tasks/<任务>/c_runs/<轮>/c_review.md`（含 YAML 头审查结论）；`engineer-preflight.md` → `personas/engineer/preflight.md`。全局 `p` 端另备 4 份可选模板：`principal-quadrants.md`、`principal-dispatches.md`、`principal-resources.yaml`、`principal-telemetry.jsonl` → 复制至全局控制中心或资料目录 `principal/` 下对应文件名（去掉 `principal-` 前缀）。后几类属「项目或全局可采用的做法」，不采用就不建。
-
 ## 首次提示
 在单专案主会话的项目目录里（目录里有 `.git`，或有 `AGENTS.md`、`CLAUDE.md`、`README.md` 之一；家目录与全局控制中心不算）首次戴专案主角色（非 `p`）、该项目没有 `personas/`、本次会话还没提示过时，在首行标签之后提示一次，一行：本项目没有项目层记忆，要建吗？（最小／全套／不建；想不再提示请明说）。「最小」指 `README.md` 加所戴面具的 `MEMORY.md`。用户说「不建」只对本次会话生效，新会话照常提示一次；只有用户明确表述「不再提示」，才在资料目录的 PROFILE 记一行「已婉拒的项目」，只记项目路径（条目键 `project.declined`，来源栏填本次 LOG 事件键，并记 LOG；换克隆路径或 worktree 会重新提示），之后该项目不再提示。纯聊天、没有项目目录、戴全局 `p`、只用共用模块、网页端、a／p 派发的子 agent、任务书拉起的、为独立审查另开的上下文不提示。提示不等于建立，用户同意后才建。
 
-## 结构
-- `personas/`
-  - `README.md`：本项目的面具分工、预设读与不能写、教训放哪。
-  - `INSTANCES.md`：实例（#标签）与单元登记。
-  - `critic.md`：本项目 c 的范围、权限与触发点（可选）。
-  - `kis.md`：项目共用元素表（启用 kis 时按需建立）。
-  - `<面具>/MEMORY.md`：按实例分节的索引。
-  - `<面具>/<条目>.md`：条目档，一档一主题。
-  - `architect/outline.md`：项目静态大纲与章程（总目标、内部代号对照表、跨实例决定、判据与代理指标阈值，已去除进度指针表与甘特排程，a 维护）。
-  - `implementation_plan.md`（子项目目录 `<子目录>/implementation_plan.md` 或 `architect/implementation_plan.md`）：Antigravity 对齐的设计契约、五项框定、`budget_envelope` 与变更契约（a 维护）。
-  - `task.md`（子项目目录 `<子目录>/task.md` 或 `architect/task.md`）：法定进度源——标准复选框步骤树 ＋ 底部 `## Backlog` 节 ＋ 硬 DDL、状态与科研闭环 YAML 头（a 维护；`## Backlog` 条目与状态 e 也可更新）。兼容 `0.8.x` 旧项目沿用 `<子目录>/PLAN.md`／`architect/plan.md` ＋ `architect/backlogs.md`。
-  - `architect/plan_history.md`：已完结或久未更新归档搁置的计划树（a 维护）。
-  - `spark/options.md`：选项与点子资产索引，链接到 `spark/options/` 下的独立选项档案（s 与 a 都可写）；每个问题独立成档并保有专属 O0，避免跨实例单表覆盖；历史档案可跨项目正向检索复用。
-  - `collector/data_collected.md`：单次查证的网址与原始证据流水表（d 维护）。
-- `kb/`（或 `lit_kb/`，项目根目录的核心知识库，见 [kb](kb.md)；用到时经用户同意从 `templates/kb-*.md` 建立，a 与 d 共同维护）：
-  - `PROTOCOL.md`：本项目三层知识库规范。
-  - `themes/<主题>.md`（Tier 2）：100% 围绕本项目核心工作线／问题／模块的主题综述与横向对比路由矩阵（Index-First 第一站）。
-  - `cards/<id>.md` 或 `papers/<citekey>.md`（Tier 3）：Top 10%–20% 关键外部基准卡，以及本项目实测产生的**内部知识点卡**（`internal_<slug>.md`，含已验证结论与已证伪死胡同），淘汰项移入 `_archive/`。
-`personas/` 核心管理文件、工作线双档（`implementation_plan.md` ＋ `task.md`）与可选的 `kb/`（或 `lit_kb/`）用到时才从模板建立；项目已有等价文档时，在 `personas/README.md` 指向它，不重复建；没有 `personas/` 的项目，`options.md`、`task.md`（或旧制 `plan.md`）与 `data_collected.md` 一样先问用户记在哪里，或只写在回复里。分工：`outline.md` 去进度化后只当本项目静态章程（总目标、内部代号对照表、跨实例决定、判据与代理指标阈值），**不再维护**「工作线与战役指针表」或甘特排程（跨项目四象限总览上移至 `p` 的 `principal/quadrants.md`，单专案步骤进度留在各子项目局部 `task.md`）；新开工作线默认在子项目或 `architect/` 建立 `implementation_plan.md`（设计规范＋`budget_envelope`）与作为**法定进度源**的 `task.md`（复选框步骤树＋底部 `## Backlog` 节＋内生状态与科研闭环 YAML 块；单实例决定记在 `implementation_plan.md` 或 `HANDOFF.md`）；`0.8.x` 旧项目已有 `<子目录>/PLAN.md`／`architect/plan.md` ＋ `architect/backlogs.md` 的保持原样兼容，不强制自动改名；`plan_history.md` 收已完结（成功、失败或被取代）及久未更新（如两个月）经用户同意移入并标为「搁置」的计划树；`options.md` 的通过方向要做时，转成 `task.md` 的步骤／Backlog 行，或直接写任务书。多实例项目的计划树编号按实例隔离（`P-<实例>-<序号>`），各实例跨同实例全部子项目与 `plan_history.md` 独立递增；单实例可用 `P1、P2`，已冻结旧树不回溯改号。日常执行只更新局部法定进度源（`task.md` 或兼容旧 `PLAN.md`），仅在结案或经用户确认归档搁置时迁入 `plan_history.md`。
-
-## kis 项目表
-- `personas/kis.md` 是项目共用元素表，启用 kis 的角色或单用 kis 的执行者可读，由 a、启用 kis 且有写权限的 s／e／d，或单用 kis 且有写权限的执行者维护；这一共用表不受「谁的资料夹谁写」限制，但仍受宿主、任务书与项目权限约束（只读派发的 c 或受写权限限制的执行者只读查表，新条目写在回复中，有 a 时交 a 记入、单用时供用户保存，且 c 不改待审物）。只在用户同意后从模板建立；项目已有等价表时在 `personas/README.md` 指向它，不重复建。
-- 旧个人 `kis.md` 不自动迁移。用户同意并选定条目后，保留来源地迁入；已有相同拆法时补来源，不同视角并列，目标内容有冲突时请用户取舍，不覆盖；个人旧表保留。没有项目或用户不建表时只在回复里给出条目。
+不自动建立。由用户要求，或 a 提出、用户同意后，才按 setup 复制所需模板；动作细则沿用上述适用范围。
 
 ## 读写规矩
 - **读没有禁区**；`personas/README.md` 只定各面具的**预设读**与**不能写**（一张表）。开工先读所戴面具的 `MEMORY.md` 中 `#all` 与当前实例两节，条目按需再开。
 - **谁的资料夹谁写**；其他面具可读不可改（例外：a 有特权，可以写其他面具资料夹里的记忆；`spark/options.md` 与 `spark/options/` 下的选项档案 a 也写；`task.md` 底部 `## Backlog` 及兼容旧项目的 `architect/backlogs.md` 条目与状态 e 也可更新；项目的 `kb/` 或 `lit_kb/` 核心知识库由 a 与 d 共同写入维护，见 [kb](kb.md)；`p` 与 `e#ops` 读写全局 `principal/` 目录而不写专案业务文件）。跨面具传话写在自己的资料夹或任务书里，让对方来读。
 - `MEMORY.md` 是索引：按实例分节（`## #all`、`## #Demo`…），一行一条、指向条目档，不放内容。条目档写绝对日期，标所属实例；一个条目只存一份，与几个实例有关就在几节各列一行。
-- **不重复项目已有文档**：现况、待办、决定、任务与验收、写作规范各有其档；面具资料夹只放那些文档放不下的东西（取舍理由、错误形状、按情境的检查表）。
-- **状态只写一处，日常只改局部**：任务与计划节点的当前状态只写在法定进度源（新项目为各工作线／子项目的 `task.md`，兼容旧项目为 `<子目录>/PLAN.md`、单目录 `architect/plan.md` 或 `INSTANCES.md`；项目另指定了进度源的写在那里）。法定进度源的步骤树与顶层内生状态／闭环 YAML 头统一由专案 a 单点维护（跨专案四象限、`quota_boost` 与 `p_push_round` 统一在全局 `principal/` 记录，p 与 `e#ops` 对专案文件仅只读扫描、绝不直接改写），e 只可追加或勾选 `task.md` 底部的 `## Backlog` 条目（或兼容旧 `architect/backlogs.md`），不擅改主步骤树与优先级。任务书的状态栏与 e 的回报是该任务自己的记录，照写。`outline.md`、交接与汇总不另写子节点状态句，只引用法定进度源（`e#ops` 通过读取各仓 `task.md` 头部 YAML 向全局 `principal/quadrants.md` 与个人科研助理 WebApp 汇总看板状态）。项目可以加一个检查脚本，找出别处与进度源不一致的状态句。
-- **实验如何冷冻（活体进度源与单实验冻结哈希分离）**：包含多个实验或需公开预注册的项目中，承载日常步骤树、跨实验排期与后续实验增补的**活体进度源**（如 `<子目录>/PROGRESS.md` 或持续演进的总纲档）**不得**纳入任何单实验的冻结清单（`freeze.json`）或公开预注册离线校验器（`verify_prereg.py`）的 SHA-256 绑定白名单。每个实验在进入冻结（如 S5）与公开预注册时，须单独生成只属于该实验的自包含冻结规范（如 `exp1-en/PLAN-E1.md` → `PLAN-E1.frozen.md`、`exp2-zh/PLAN-E2.md`）；单实验的 `freeze.json` 与公开预注册校验器只绑定该实验自身的冻结规范、材料、提示模板与代码哈希，使后续新增实验（如实验 2、实验 3）或更新活体进度源时，已冻结实验的校验哈希零改动、100% 保持通过。若项目早期已将顶层总纲 `PLAN.md` 的 SHA-256 绑入单实验（如实验 1）的预注册校验器，则将该 `PLAN.md` 就地封存为不可变快照（在法定进度源 `PROGRESS.md` 头部注明「总纲 `PLAN.md` 受预注册哈希保护，不直接改写」），日常步骤树与新增实验节点统一写入 `PROGRESS.md`，各后续实验的细化设计分别写入各自的独立计划档（如 `exp2-zh/PLAN-E2.md`、`exp3-en/PLAN-E3.md`）。
-- **交接只放指针**：交接文件按模板 `handoff.md` 分节（当前状态、已决定、已被取代的决定、队列、规则、派发命令、交接清单、文件地图、开场步骤），全局入口指向大纲，状态与决定以链接指向进度源、大纲与指令档；交接不能代替对大纲、计划与目标缺口的更新；已被取代的决定另列日期、用户原话与替代关系，避免接手者沿用旧稿。交接清单核对 scratchpad 里产交付物的脚本是否已搬进仓库，未搬的说明原因与待授权事项。写交接之前先提交：未提交的文件在别的 worktree 与云端会话里看不到；项目不是 git 仓库的，写明交接的时间。
-- 每个面具写自己的记忆，写在自己的资料夹，不替别的面具写（a 有特权，可以写别的面具的记忆）。当场写的有三类：用户说「记下」「记住」（写在哪里按「教训放哪」一节的判准；判为项目指令档的，先提出规则句，经用户同意再写）；用户纠正了本面具的做法（写被纠正的做法和纠正后的做法）；本面具的产出被判定（采纳、否决、成立、不成立）时，写判定的理由或错误形状（面具是已结束的子 agent 时，由 a 在判定时代写）。其余不当场写。
+
+日常只按上述索引与当前问题开条目；动作前按下表补读细则，跨动作读齐，中途改变动作先补读。短入口本身不授权建档或写入。
+
+| 动作／触发 | [项目动作细则](project-memory-workflows.md)二级段 |
+|---|---|
+| 用户授权建档、复制模板、目录布局 | [setup](project-memory-workflows.md#setup建档与结构)，先补读 manage（CLI 自动附上） |
+| 新计划／新项目、状态管理、归档、写记忆与教训归属 | [manage](project-memory-workflows.md#manage管理与记忆)；建档另读 setup |
+| 实验冻结／预注册、修改可能受保护的计划之前 | [freeze](project-memory-workflows.md#freeze实验如何冷冻) |
+| 准备交接之前（含提交前提） | [handoff](project-memory-workflows.md#handoff交接) |
+| 考虑或采用可选审查做法之前 | [review](project-memory-workflows.md#review项目可采用的做法)（仍须项目明确采用） |
+| 使用／建立 kis 项目表或迁移旧个人表 | [kis](project-memory-workflows.md#kis项目表与迁移) |
+
+`--project-action` 可重复，显式装配本入口与所选细则；不指定时 loader 不追加项目规则。模块单用或无角色也可请求，不切角色、不建目录；手动照表读取同样有效。
+
+## 何时建立
+见上表 `setup`；动作前读取对应细则。
+
+## 结构
+见上表 `setup`；动作前读取对应细则。
+
+## kis 项目表
+见上表 `kis`；动作前读取对应细则。
 
 ## 教训放哪
-判准只有一句：**不管戴哪个面具，不知道这件事就会出事吗？**
-- 会 → 项目指令档（如 AGENTS.md、CLAUDE.md），缩成一两行规则句，**经用户同意**后再写；不自动修改指令档。
-- 不会 → 用得到它的那个面具的资料夹。
-- 项目在推进中间（实验拆解、统计校准、正式集分析、调参融合、架构取舍、概念拆解）产生的跨会话**核心内部知识点**（已验证的定量效应量／有效配方，以及**被实测证伪的死胡同**）→ 项目设有 `kb/`（或 `lit_kb/`）时，由 a 或 d 按 [kb](kb.md) 同步沉淀进 Tier 2 `themes/*.md` 路由矩阵与 Tier 3 `internal_<slug>.md` 卡片，不塞进面具手艺资料夹；其余只对单次任务成立的过程读数仍留在该工作的任务书或报告。
-- 只在一个实例验过的教训不升为通用（`#all`），要在两个实例各自验过；另一个实例沿用时标「沿用自 #Demo，未在本线验过」。
+见上表 `manage`；动作前读取对应细则。
+
+## 实验如何冷冻
+见上表 `freeze`；动作前读取对应细则。
 
 ## 项目可采用的做法
-下列做法**不是默认**，也不写成默认循环的一步；项目在 `personas/README.md` 或 `personas/critic.md` 写明采用哪几项才生效：
-- **一个单元一个持续的 c**：单元（如 `#Demo/U{编号}`）内的任务书与交付都送同一个 c；单元结束就关，下一单元另开，跨单元经验只经错误形状传递。载体无法续用时，「持续」指同一份记忆与错误形状，不指同一个会话（见 [角色](roles.md) 的 c 段）。
-- **c 写审计产出**：c 可以写项目的审计目录（诊断结果、报告），由 a 提交；c 仍不改待审物。（装了 `brief-workflow` 的，由该包规定。）
-- **终审另开干净上下文的 c**：单元终审由新开的 c 执行，先只拿产物做冷读并写下记录，之后才读基线诊断；终审完成前不读本单元的任务书与 c 的记录。（装了 `brief-workflow` 的，由该包规定。）
-- **c 的 `shapes.md` 与 `log.md`**：反复出现的错误形状（长什么样、这次怎么露出来、最便宜的鉴别）；每次送审记一行，事后由 a 回填挡下或误报（c 多半已经结束），定期回看，只是多了仪式就撤掉。
-- **工程师的按情境检查表**（`engineer/preflight.md`）：按情境列指针与一句提醒，内文以项目指令档为准。
-- **单元结束后的回顾**：a 把本单元的新经验按上文判准分派到面具资料夹或指令档（后者经用户同意）。
-- **起草任务书前对照错误形状自查**。（装了 `craft` 的，由该包规定。）
+见上表 `review`；动作前读取对应细则。
 
 ## 下限
 项目层与习惯包都不能取消 c 的独立上下文、不能要求 c 接收作者的推理、不能给 c 否决权；也不能扩大宿主或项目既有的权限。

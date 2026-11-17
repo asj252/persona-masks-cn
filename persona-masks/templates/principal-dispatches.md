@@ -16,8 +16,6 @@ updated: "YYYY-MM-DD"
 |---|---|---|---|---|---|---|---|---|
 | `DSP-001` | `{project}` `#Demo` | `{host}` / `inbox` | `0 / 5` | `open` | `null` | `null` | `null` | `running` |
 
-## 闭环核验与 5 轮反推约定
-- **正向闭环（`claim_verified`）**：`claim_100c`（`<= 100` 字）＋ 非空 `evidence_ref` ＋ 非空 `salient_property`。
-- **负向闭环（`falsified`）**：`claim_100c`（原主张为何错误）＋ `evidence_ref`（反面实测或 `kb/cards/internal_*` 死胡同卡）。
-- **基建豁免（`infra_exempt`）**：须在派工单开篇显式声明为纯基建运维。
-- **自动反推**：未达闭环且未触预算／安全红线而半路停工者，由 `p` 直接通过 Inbox／SSH 督促 `a` 继续推进；`p_push_round` 满 `5` 仍未闭环则自动标 `blocked` 熔断，升级至 `quadrants.md` 待拍板队列。
+## 结果与续跑
+- 按任务目标核对结果、证据和限制；科研闭环字段仅在项目采用时使用。
+- 续跑遵守原有授权、预算和停止条件，不因未填固定字段自动派发。持续无进展时交用户取舍，更新现有状态。
